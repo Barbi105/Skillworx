@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 var PORT = process.env.PORT || 3001;
 
 var indexRouter = require('./routes/index');
@@ -22,6 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// Connect to the Mongo db
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/opus_db");
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

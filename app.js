@@ -3,7 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+<<<<<<< Updated upstream
 var mongoose = require('mongoose');
+=======
+var PORT = process.env.PORT || 3001;
+
+// var indexRouter = require('./routes/index');
+// var usersRouter = require('./routes/users');
+>>>>>>> Stashed changes
 
 var app = express();
 var routes = require('./routes');
@@ -21,13 +28,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Serve up static assets on heroku
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-app.use(routes);
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);

@@ -3,14 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-<<<<<<< Updated upstream
+
 var mongoose = require('mongoose');
-=======
-var PORT = process.env.PORT || 3001;
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
->>>>>>> Stashed changes
 
 var app = express();
 var routes = require('./routes');

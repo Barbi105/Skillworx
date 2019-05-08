@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Redirect } from "react-router-dom";
 import API from "../../utils/API"
 
 export class LoginForm extends Component {
   state={
     email: "",
     password: "",
+    redirectTo: null
   };
 
   handleInputChange = event => {
@@ -23,13 +25,21 @@ export class LoginForm extends Component {
     if (!this.state.email || !this.state.password) {
       alert("Enter email and password!!!");
     }  else {
-      API.login(this.state).then((res)=>{
-        console.log(res);
+      const { email, password } = this.state;
+
+      API.login({ email, password }).then((res)=>{
+        this.setState({ redirectTo: res.data });
+      }).catch(err => {
+        console.log(err);
       })
     }
   }
 
   render() {
+    if (this.state.redirectTo) {
+      return <Redirect to={this.state.redirectTo} />
+    }
+
     return (
         <div className="jumbotron">
                 <form className="login">
@@ -39,7 +49,7 @@ export class LoginForm extends Component {
                   <div class="form-group">
                     <input type="password" class="form-control" id="userPasswordLogin" placeholder="password" name="password" value={this.state.password} onChange={this.handleInputChange}/>
                   </div>
-                  <button onClick={this.handleFormSubmit} type="submit" class="btn btn-primary" id="login-submit">Submit</button>
+                  <button onClick={this.handleFormSubmit} type="submit" class="btn btn-primary" id="login-submit">login</button>
                 </form>
         </div>
         ) 

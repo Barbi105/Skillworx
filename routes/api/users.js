@@ -18,6 +18,7 @@ router.route("/populated")
   router.route("/login")
   .post(passport.authenticate("local"), function(req, res) {
     //redirect them to page..
-    res.json("/mainpage")});
+    res.json("/search");
+  });
 
 module.exports = router;

@@ -30,7 +30,8 @@ handleInputChange = event => {
       );
     } else {
       API.signup(this.state).then((res)=>{
-        console.log(res);
+        console.log(res.data);
+        
       })
     }
   }

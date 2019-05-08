@@ -6,7 +6,7 @@ export default {
     return axios.get("/api/users");
   },
   // Gets the book with the given id
-  getUsers: function(id) {
+  getUserById: function(id) {
     return axios.get("/api/users/" + id);
   },
   // Deletes the book with the given id
@@ -19,6 +19,7 @@ export default {
   },
   login: function(login){
     return axios.post("/api/users/login", login);
+
   },
   signup: function(signup){
     return axios.post("/api/users/", signup);

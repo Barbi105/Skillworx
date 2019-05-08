@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var session = require("express-session");
 
 var app = express();
 var routes = require('./routes');
@@ -14,6 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({ secret: "opus", resave: true, saveUninitialized: true }));
+const passport = require("./config/passport");
+
+app.use(passport.initialize());
+app.use(passport.session());
 // Serve up static assets on heroku
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -35,7 +41,6 @@ app.use(function(err, req, res, next) {
   
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
 });
 
 // Connect to the Mongo db

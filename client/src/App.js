@@ -1,12 +1,9 @@
 import React from 'react';
-<<<<<<< HEAD
 import logo from './logo.svg';
 import Main from "./components/Main"
 import Task from "./components/Cards/Task.jsx"
 import Navbar from "./components/Navbar/Navbar.jsx"
 import Profile from "./components/Profile/Profile.jsx"
-=======
->>>>>>> master
 import './App.css';
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from './pages/landingPage'
@@ -14,23 +11,21 @@ import Search from './pages/Search'
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <Navbar />
-      <div className="container">
-        {/* <div className="row"> */}
-          {/* <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task /> */}
-          <Profile />
-        {/* </div> */}
-      </div>
+    // <div className="App">
+    //   <Navbar />
+    //   <div className="container">
+    //     {/* <div className="row"> */}
+    //       {/* <Task />
+    //       <Task />
+    //       <Task />
+    //       <Task />
+    //       <Task />
+    //       <Task /> */}
+    //       <Profile />
+    //     {/* </div> */}
+    //   </div>
 
-    </div>
-=======
+    // </div>
     <Router>
       <div>
         <Switch>
@@ -39,7 +34,6 @@ function App() {
         </Switch>
       </div>
     </Router>
->>>>>>> master
   );
 }
 

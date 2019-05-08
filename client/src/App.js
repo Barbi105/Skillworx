@@ -1,26 +1,27 @@
 import React from 'react';
 import logo from './logo.svg';
 import Main from "./components/Main"
+import Task from "./components/Cards/Task.jsx"
+import Navbar from "./components/Navbar/Navbar.jsx"
+import Profile from "./components/Profile/Profile.jsx"
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      <Main />
+      <Navbar />
+      <div className="container">
+        {/* <div className="row"> */}
+          {/* <Task />
+          <Task />
+          <Task />
+          <Task />
+          <Task />
+          <Task /> */}
+          <Profile />
+        {/* </div> */}
+      </div>
+
     </div>
   );
 }

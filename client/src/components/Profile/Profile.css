@@ -1,0 +1,19 @@
+#user-pic {
+  width: 50%;
+  border-radius: 50%;
+}
+
+#skill-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill {
+  padding: 5px;
+  margin-right: 5px;
+  border-bottom: 3px solid #222;
+  background-color: rgba(51, 102, 153, 1);
+  border-radius: 5px;
+  color: #ddd;
+  margin-bottom: 5px;
+}

@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 
 var mongoose = require('mongoose');
+var session = require("express-session");
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
@@ -27,8 +28,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+<<<<<<< HEAD
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
+=======
+app.use(session({ secret: "opus", resave: true, saveUninitialized: true }));
+const passport = require("./config/passport");
+
+app.use(passport.initialize());
+app.use(passport.session());
+// Serve up static assets on heroku
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+app.use(routes);
+
+>>>>>>> master
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -43,7 +59,6 @@ app.use(function(err, req, res, next) {
   
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
 });
 
 // Connect to the Mongo db

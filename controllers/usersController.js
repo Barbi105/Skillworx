@@ -15,9 +15,16 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.User
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
+    console.log(req.body);
+    db.User.create(req.body).then(function(user){
+      console.log(user);
+      res.json(user);
+    })
+      // .then(dbModel => {
+      //   console.log(dbModel)
+      //   res.json(dbModel)})
+      // // .then(res.redirect(307, "/api/users/login"))
+      // .then(()=> res.status(200).json())
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {

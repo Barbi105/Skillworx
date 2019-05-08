@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import Main from "./components/Main"
+import Login from "./components/loginForm/login"
+import Signup from "./components/signupForm/signup"
 import './App.css';
 
 function App() {
@@ -20,7 +22,8 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Main />
+      <Login />
+      <Signup />
     </div>
   );
 }

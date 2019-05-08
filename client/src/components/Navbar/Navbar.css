@@ -1,0 +1,38 @@
+.navbar {
+  background-color: rgba(51, 102, 153, 1);
+  margin-bottom: 50px;
+  border-bottom: 3px solid #222;
+}
+
+.navbar-brand{
+  font-family: Yellowtail;
+}
+
+.cap-brand {
+  font-size: 3rem;
+  color: #ddd;
+  text-decoration: underline;
+}
+
+.nav-item{
+  background-color: #ddd;
+  color: rgba(51, 102, 153, 1);
+  padding: 5px 10px;
+  border-top: 3px solid #222;
+  float: right;
+  margin-right: 5px;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in;
+}
+
+.nav-item:hover {
+  background-color: #fff;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in;
+}
+
+.small-cap-brand {
+  font-size: 1.5rem;
+  color: #ddd;
+
+}

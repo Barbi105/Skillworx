@@ -11,14 +11,14 @@ router.route("/")
 router.route("/populated")
   .get(usersController.populate);
 
-  router.route("/signup")
+router.route("/signup")
   .post(usersController.create);
 
-  //find user if login exists
-  router.route("/login")
+//find user if login exists
+router.route("/login")
   .post(passport.authenticate("local"), function(req, res) {
-    //redirect them to page..
-    res.json("/search");
-  });
+      //redirect them to page..
+      res.json("/search");
+});
 
 module.exports = router;

@@ -17,7 +17,11 @@ module.exports = {
   create: function(req, res) {
     db.Job
       .create(req.body)
-      .then(dbJob => db.User.findOneAndUpdate({}, { $push: {jobs: dbJob._id}}, {new: true}))
+      .then(dbJob => db.User.findOneAndUpdate(
+        { _id: req.user._id}, 
+        { $push: {jobs: dbJob._id}}, 
+        {new: true}
+        ))
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

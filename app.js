@@ -28,10 +28,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-<<<<<<< HEAD
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
-=======
 app.use(session({ secret: "opus", resave: true, saveUninitialized: true }));
 const passport = require("./config/passport");
 
@@ -44,7 +40,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
->>>>>>> master
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

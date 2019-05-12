@@ -1,3 +1,4 @@
+import '../../../styles/ChatApp.css';
 import React from 'react';
 import io from 'socket.io-client';
 import config from '../../../config';
@@ -17,7 +18,6 @@ class ChatApp extends React.Component {
 
     // set the initial state of messages so that it is not undefined on load
     this.state = { messages: [] };
-
     this.sendHandler = this.sendHandler.bind(this);
 
     // Connect to the server
@@ -29,12 +29,12 @@ class ChatApp extends React.Component {
     });
   }
 
-  sendHandler(input) {
+  sendHandler(message) {
     const messageObject = {
-      message: input
+      message
     };
 
-    API.saveMessage(messageObject);
+    API.saveMessage({body: message});
 
     // Emit the message to the server
     this.socket.emit('client:message', messageObject);

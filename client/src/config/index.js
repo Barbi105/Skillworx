@@ -1,5 +1,3 @@
-'use strict';
-
 // Here we define where our server is listening. It is best to store this in
 // a configuration file because we are able to easily change the server URL
 // based on the current environment. I.e if we are in development, we want to

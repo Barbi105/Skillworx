@@ -43,10 +43,17 @@ const userSchema = new Schema({
       ref: "Job"
     }
   ],
+  // an embedded document to store Messages
   messages: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "Message"
+      body: String,
+      createdAt: {type: Date, default: Date.now},
+      to: [{
+            type: Schema.Types.ObjectId,
+            ref: "User"
+          }],
+          // socket#ID, room
+      chatId: String
     }
   ]
 });

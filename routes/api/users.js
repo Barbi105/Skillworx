@@ -7,18 +7,23 @@ router.route("/")
 .get(usersController.findAll)
 .post(usersController.create);
 
+// Matches with "/api/users/:id"
+router.route("/:id")
+.get(usersController.findById);
+
 // Matches "/api/users/jobs". Populate for user
 router.route("/jobs")
   .get(usersController.populateJobs);
 
-// Matches "/api/users/messages". Populate for user
+// Matches "/api/users/:id/messages". Populate for user
 router.route("/messages")
-  .get(usersController.populateMessages)
+  .get(usersController.getMessages)
+  .post(usersController.saveMessage);
 
 router.route("/signup")
   .post(usersController.create);
 
-//find user if login exists
+// Find user if login exists
 router.route("/login")
   .post(passport.authenticate("local"), function(req, res) {
       //redirect them to page..

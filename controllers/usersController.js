@@ -45,15 +45,23 @@ module.exports = {
         res.json(err);
       });
   },
-  populateMessages: function(req, res) {
+  getMessages: function(req, res) {
     db.User
-      .find({_id: req.user._id})
-      .populate("messages")
-      .then(function(dbUser){
-        res.json(dbUser);
+      .find({_id: req.user.id})
+      .then(dbUser => {
+        let messages = dbUser.map(elem => elem.messages); 
+        res.json(messages);
       })
-      .catch(function(err) {
-        res.json(err);
-      });
+      .catch(err => res.json(err));
+  },
+  saveMessage: function(req, res) {
+    db.User
+      .findOneAndUpdate(
+        { _id: req.user._id },
+        { $push: { messages: req.body } },
+        { new: true }
+      )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 };

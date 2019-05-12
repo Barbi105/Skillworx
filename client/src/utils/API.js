@@ -43,11 +43,10 @@ export default {
   },
   // Gets all Messages
   getMessages: function () {
-    return axios.get("/api/users/messages");
+    return axios.get(`/api/users/messages`);
   },
   // Saves a message to the database
   saveMessage: function (data) {
-    console.log(data);
-    return axios.post("/api/messages", data);
+    return axios.post(`/api/users/messages`, data);
   }
 };

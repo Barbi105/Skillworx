@@ -7,9 +7,13 @@ router.route("/")
 .get(usersController.findAll)
 .post(usersController.create);
 
-// Matches with "/api/users/populated"
-router.route("/populated")
-  .get(usersController.populate);
+// Matches "/api/users/jobs". Populate for user
+router.route("/jobs")
+  .get(usersController.populateJobs);
+
+// Matches "/api/users/messages". Populate for user
+router.route("/messages")
+  .get(usersController.populateMessages)
 
 router.route("/signup")
   .post(usersController.create);

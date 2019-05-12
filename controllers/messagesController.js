@@ -1,59 +1,41 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the messagesController
 module.exports = {
   findAll: function(req, res) {
-    db.User
-      .find(req.query)
-      .then(dbModel => res.json(dbModel))
+    db.Message
+      .find({})
+      .then(messages => res.send(messages))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.User
+    db.Message
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.User
+    db.Message
       .create(req.body)
-      .then(user => res.json(user))
-      // .then(res.json(307, "/api/users/login"))
+      .then(dbMessage => db.User.findOneAndUpdate(
+        { _id: req.user._id}, 
+        { $push: {messages: dbMessage._id} }, 
+        {new: true}
+        ))
+      .then(Message => res.json(Message))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.User
+    db.Message
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.User
+    db.Message
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  },
-  populateJobs: function(req, res) {
-    db.User
-      .find({_id: req.user._id})
-      .populate("jobs")
-      .then(function(dbUser){
-        res.json(dbUser);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  },
-  populateMessages: function(req, res) {
-    db.User
-      .find({_id: req.user._id})
-      .populate("messages")
-      .then(function(dbUser){
-        res.json(dbUser);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
   }
 };

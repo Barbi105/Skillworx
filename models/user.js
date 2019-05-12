@@ -42,6 +42,12 @@ const userSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Job"
     }
+  ],
+  messages: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Message"
+    }
   ]
 });
 //encrypting passwords user input

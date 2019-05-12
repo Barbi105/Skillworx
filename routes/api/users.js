@@ -6,9 +6,10 @@ var passport = require("../../config/passport");
 
 
 router.route("/")
-.get(function(req,res){
+.get(function(req, res){
   if(req.user){
       res.json(req.user);
+      res.json("/search");
   }else{
       res.json("no user")
   }

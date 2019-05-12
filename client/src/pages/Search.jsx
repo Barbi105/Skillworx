@@ -9,13 +9,14 @@ class Search extends React.Component {
   };
 
   componentDidMount(){
-
+    
     API.getUsers()
-      .then((req, res) => {
+    .then((req, res) => {
+        console.log(req);
         console.log(req.user);
-        console.log(res);
-        if (res) {
+        if (req.data !== "no user") {
           //load page
+          res.json("/login", req.data);
         } else {
           this.setState({ redirect: true })
         }
@@ -31,7 +32,6 @@ class Search extends React.Component {
       return (
         <div>
           <LogoutButton />
-          You shouldn't be here?
         </div>
       )
     }

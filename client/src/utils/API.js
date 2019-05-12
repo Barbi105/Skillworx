@@ -17,15 +17,14 @@ export default {
   saveUsers: function(userData) {
     return axios.post("/api/users", userData);
   },
-  login: function(login){
+  login: function(login) {
     return axios.post("/api/users/login", login);
-
   },
-  signup: function(signup){
+  signup: function(signup) {
     return axios.post("/api/users/", signup);
   },
 
-    logoutUser: () => {
-      return axios.get("/api/users/logout");
+  logoutUser: () => {
+    return axios.get("/api/users/logout");
   }
-}
+};

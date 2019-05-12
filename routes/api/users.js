@@ -21,4 +21,11 @@ router.route("/login")
       res.json("/search");
 });
 
+router.route("/logout")
+  .get(function(req, res) {
+    console.log(req.user);
+    req.logout();
+    res.json("/");
+    console.log(" -------------Log user out-------------");
+});
 module.exports = router;

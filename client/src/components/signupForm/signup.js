@@ -23,8 +23,8 @@ handleInputChange = event => {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.name ||!this.state.lastName ||!this.state.email || !this.state.password) {
-      // alert("Please fill out all fields");
+    if (!this.state.firstName ||!this.state.lastName ||!this.state.email || !this.state.password) {
+      alert("Please fill out all fields");
     } else if (this.state.password.length < 6) {
       alert(
         `Choose a longer password`
@@ -40,7 +40,7 @@ handleInputChange = event => {
         <div className="jumbotron">
             <form>
                   <div className="form-group">
-                    <input type="text" className="form-control" id="nameSignup" name="firstName" placeholder="First Name" value={this.state.name} onChange={this.handleInputChange} required/>
+                    <input type="text" className="form-control" id="nameSignup" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange} required/>
                   </div>
                   <div className="form-group">
                     <input type="text" className="form-control" name="lastName" id="lastNameSignup" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange} required/>

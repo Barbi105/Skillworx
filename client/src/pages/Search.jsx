@@ -11,10 +11,11 @@ class Search extends React.Component {
   componentDidMount(){
 
     API.getUsers()
-      .then((res) => {
+      .then((req, res) => {
+        console.log(req.user);
         console.log(res);
         if (res) {
-          
+          //load page
         } else {
           this.setState({ redirect: true })
         }

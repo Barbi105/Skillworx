@@ -10,7 +10,7 @@ var NewComponent = React.createClass({
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
           <title>Document</title>
           <meta charSet="UTF-8" />
-          <link rel="stylesheet" type="text/css" href="style.css" />
+          <link rel="stylesheet" type="text/css" href="kittystar.css" />
           <title>Star rating</title>
           <div className="rate">
             <input type="radio" id="star5" name="rate" defaultValue={5} />
@@ -28,3 +28,5 @@ var NewComponent = React.createClass({
       );
     }
   });
+
+  export default star

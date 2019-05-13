@@ -30,6 +30,7 @@ const userSchema = new Schema({
       "Password should be longer."
     ]
   },
+  //rating for kittyyyy
   image: String,
   rating: Number,
   skills: { type: Array },

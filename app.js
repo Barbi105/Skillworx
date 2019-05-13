@@ -7,10 +7,6 @@ var session = require("express-session");
 var passport = require("./config/passport");
 var app = express();
 var routes = require('./routes');
-var stripe = require("stripe");
-require('dotenv').config();
-
-// console.log(process.env.STRIPE_SECRET);
 
 // Serve up static assets on heroku
 if (process.env.NODE_ENV === "production") {

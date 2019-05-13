@@ -37,23 +37,31 @@ export class SignupForm extends Component {
   }
   render() {
     return (
-      <div className="jumbotron">
-        <form>
-          <div className="form-group">
-            <input type="text" className="form-control" id="nameSignup" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange} required />
-          </div>
-          <div className="form-group">
-            <input type="text" className="form-control" name="lastName" id="lastNameSignup" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange} required />
-          </div>
-          <div className="form-group">
-            <input type="email" className="form-control" id="usernameSignup" name="email" placeholder="email" value={this.state.email} onChange={this.handleInputChange} required />
-          </div>
-          <div className="form-group">
-            <input type="password" className="form-control" id="userPasswordSignup" name="password" placeholder="password" value={this.state.password} onChange={this.handleInputChange} required />
-          </div>
-          <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary" id="signup-submit">Sign up</button>
-        </form>
+      <div className="d-flex">
+        <div className="jumbotron mr-3 leftLanding">
+          <h2>Tidy Space.</h2>
+          <h2>Happy Mind.</h2>
+          <p>The ways clearing your space can improve your life.</p>
+        </div>
+        <div className="jumbotron w-100">
+          <form>
+            <div className="form-group">
+              <input type="text" className="form-control" id="nameSignup" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange} required />
+            </div>
+            <div className="form-group">
+              <input type="text" className="form-control" name="lastName" id="lastNameSignup" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange} required />
+            </div>
+            <div className="form-group">
+              <input type="email" className="form-control" id="usernameSignup" name="email" placeholder="email" value={this.state.email} onChange={this.handleInputChange} required />
+            </div>
+            <div className="form-group">
+              <input type="password" className="form-control" id="userPasswordSignup" name="password" placeholder="password" value={this.state.password} onChange={this.handleInputChange} required />
+            </div>
+            <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary" id="signup-submit">Sign up</button>
+          </form>
+        </div>
       </div>
+      
     )
   }
 }

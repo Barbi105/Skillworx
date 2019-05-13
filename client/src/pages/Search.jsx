@@ -11,13 +11,18 @@ class Search extends React.Component {
   state = {
     redirect: false,
     jobSearch: "",
-    jobs: []
+    jobs: [],
+    type: ''
   };
 
   componentDidMount(){  
    this.loadJobs();
    this.restrictPage();
   }
+
+  // componentDidUpdate(){
+  //   this.loadJobType();
+  // }
 
   //prevents unauthorized users to acces page
   restrictPage = () => {
@@ -43,6 +48,11 @@ class Search extends React.Component {
   //   .catch(err => console.log(err));
   };
 
+  loadJobType = (type) => {
+    API.getJobByType(type)
+      .then(res => this.setState({ jobs: res.data }))
+      .catch(err => console.log(err));
+  }
   //automatically createa card for each job posted
   loadJobs = () => {
     API.getJobs()
@@ -56,21 +66,38 @@ class Search extends React.Component {
       .catch(err => console.log(err));
   }
 
-  render() {
+  handleSearch = (e) => {
+    e.preventDefault();
+    this.loadJobType(this.state.type);
+  }
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    let value = event.target.value;
+    const name = event.target.name;
+
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+
+
+  render(){
     if (this.state.redirect) {
       return <Redirect to="/" />
     } else {
       return (
         <div>
-        <LogoutButton />
-<Container fluid>
+          <LogoutButton />
+          <Container fluid>
         <Row fluid>
           <Col col-md-12>
             <div className="mb-3">
               <p>Search for Jobs</p>
-              {/* <Row>
+              <Row>
                 <Col col-md-12>
-                  <div className="input-group mb-3">
+                  {/* <div className="input-group mb-3">
                     <input
                       type="text"
                       className="form-control"
@@ -82,11 +109,26 @@ class Search extends React.Component {
                       aria-describedby="button-addon2"
                     />
                     <div className="input-group-append">
-                      <Button type="outline-secondary" onClick={this.handleFormSubmit}>Search</Button>
+                      <button type="outline-secondary" onClick={this.handleFormSubmit}>Search</button>
                     </div>
-                  </div>
+                  </div> */}
+                  <select name="type" onChange={this.handleInputChange}>
+                      <option value="" disabled selected>Select your option</option>
+                      <option value="Housework">Housework</option>
+                      <option value="Yardwork">Yardwork</option>
+                      <option value="Furniture Assembly">Furniture Assembly</option>
+                      <option value="Tutoring">Tutoring</option>
+                      <option value="Pet Care">Pet Care</option>
+                      <option value="IT">IT</option>
+                      <option value="Misc">Misc</option>
+
+
+                    </select>
+                    <button onClick={this.handleSearch}>
+                      Search
+                    </button>
                 </Col>
-              </Row> */}
+              </Row>
             </div>
           </Col>
         </Row>

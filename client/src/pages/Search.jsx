@@ -1,5 +1,5 @@
 import React from 'react';
-// import LogoutButton from '../components/Logout/logout';
+import LogoutButton from '../components/Logout/logout';
 // import PostForm from '../components/postForm/postForm';
 import Task from '../components/Cards/Task';
 import API from '../utils/API';
@@ -53,6 +53,8 @@ class Search extends React.Component {
       return <Redirect to="/" />
     } else {
       return (
+        <div>
+        <LogoutButton />
 <Container fluid>
         <Row fluid>
           <Col col-md-12>
@@ -106,6 +108,7 @@ class Search extends React.Component {
           </Col>
         </Row>
       </Container>
+      </div>
 
         // <div>
         //   <LogoutButton />

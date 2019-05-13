@@ -3,37 +3,42 @@ var usersController = require("../../controllers/usersController");
 var passport = require("../../config/passport");
 
 // Matches with "/api/users"
+
+// Find user if login exists
 router.route("/login")
-  .post(passport.authenticate("local"), function(req, res) {
-      //redirect them to page..
-      res.json("/search");
-});
+  .post(passport.authenticate("local"), function (req, res) {
+    //redirect them to page..
+    res.json("/search");
+  });
+
 router.route("/logout")
-  .get(function(req, res) {
-    console.log(req.user);
-    req.logout();
-    res.json("/");
-    console.log(" ~~~~~~~~~~~~~~ Log user out ~~~~~~~~~~~~~~ ");
-});
+  .get(usersController.logout);
 
 router.route("/")
-.get(function(req, res){
-  if(req.user){
+  .get(function (req, res) {
+    if (req.user) {
       res.json(req.user);
-      res.json("/search");
-  }else{
-      res.json("no user")
-  }
-})
-.post(usersController.create);
+      // res.json("/search");
+    } else {
+      res.send("no user")
+    }
+  })
+  .post(usersController.create);
 
-// Matches with "/api/users/populated"
-router.route("/populated")
-  .get(usersController.populate);
+// Matches "/api/users/jobs". Populate for user
+router.route("/jobs")
+  .get(usersController.populateJobs);
+
+// Matches "/api/users/messages". Populate for user
+router.route("/messages")
+  .get(usersController.getMessages)
+  .post(usersController.saveMessage);
 
 router.route("/signup")
   .post(usersController.create);
 
-//find user if login exists
+// Matches with "/api/users/:id"
+router.route("/:id")
+  .get(usersController.findById);
 
 module.exports = router;

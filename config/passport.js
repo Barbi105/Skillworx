@@ -27,10 +27,13 @@ passport.use(
 );
 
 passport.serializeUser(function(user, cb) {
-  cb(null, user);
+  cb(null, user._id);
 });
-passport.deserializeUser(function(user, cb) {
-  cb(null, user);
+passport.deserializeUser(function(id, cb) {
+  db.User.findById(id, function(err, user){
+    if(!err) cb(null, user);
+    else cb(err, null)
+  })
 });
 
 module.exports = passport;

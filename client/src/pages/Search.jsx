@@ -21,18 +21,26 @@ class Search extends React.Component {
 
   //prevents unauthorized users to acces page
   restrictPage = () => {
-  API.getUsers()
-  .then((req, res) => {
-      console.log(req);
-      console.log(req.user);
-      if (req.data !== "no user") {
+    API.getUsers()
+    .then(response => {
+      console.log(response);
+      if (response.data === "no user") {
         //load page
-        res.json("/login", req.data);
-      } else {
         this.setState({ redirect: true })
       }
-    })
-    .catch(err => console.log(err));
+    });
+  // API.getUsers()
+  // .then((req, res) => {
+  //     console.log(req);
+  //     console.log(req.user);
+  //     if (req.data !== "no user") {
+  //       //load page
+  //       res.json("/login", req.data);
+  //     } else {
+  //       this.setState({ redirect: true })
+  //     }
+  //   })
+  //   .catch(err => console.log(err));
   };
 
   //automatically createa card for each job posted
@@ -48,7 +56,7 @@ class Search extends React.Component {
       .catch(err => console.log(err));
   }
 
-  render(){
+  render() {
     if (this.state.redirect) {
       return <Redirect to="/" />
     } else {

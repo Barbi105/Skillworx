@@ -5,7 +5,7 @@ export class PostForm extends Component {
     state={
         title: "",
         description: "",
-        location: "",
+        zipcode: "",
         date: "",
         payRate: ""
       };
@@ -23,7 +23,7 @@ handleInputChange = event => {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.title||!this.state.description||!this.state.location || !this.state.date || !this.state.payRate) {
+    if (!this.state.title||!this.state.description||!this.state.zipcode || !this.state.date || !this.state.payRate) {
       alert("Please fill out all fields");
     } else {
       API.saveJob(this.state).then((res)=>{
@@ -42,7 +42,7 @@ handleInputChange = event => {
                     <textarea className="form-control" name="description" id="descriptionJob" rows="5" placeholder="Please decsribe the task ina s much detail as possible" value={this.state.description} onChange={this.handleInputChange} required/>
                   </div>
                   <div className="form-group">
-                    <input type="text" className="form-control" id="locationJob" name="location" placeholder="location" value={this.state.location} onChange={this.handleInputChange} required/>
+                    <input type="text" className="form-control" id="zipcodeJob" name="zipcode" placeholder="zipcode" value={this.state.zipcode} onChange={this.handleInputChange} required/>
                   </div>
                   <div className="form-group">
                     <input type="text" className="form-control" id="payRateJob" name="payRate" placeholder="pay rate" value={this.state.payRate}onChange={this.handleInputChange} required/>

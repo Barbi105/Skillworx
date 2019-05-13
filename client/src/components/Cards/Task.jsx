@@ -1,23 +1,29 @@
 import React from 'react'
 import ApplyButton from '../applyJob/applyJob'
+import TaskHeader from './header.jsx'
 import "./Task.css"
 
 
-function Task() {
+function Task({
+  title,
+  description,
+  zipcode,
+  date,
+  payRate
+}) {
   return (
     <div >
       <div className="card-header">
-        <img src="./assets/images/elizabethMiller.jpg" alt="user"></img>
+       <TaskHeader/>
       </div>
       <div className="card-header-text">
-        <h4 className="text-right">Task title</h4>
-        <h6 className="text-right">First Name</h6>
-        <i className="font-awesome text-right fas fa-map-marker-alt"> zipcode</i>
+        <h4 className="text-right">{title}</h4>
+        <i className="font-awesome text-right fas fa-map-marker-alt"> {zipcode}</i>
       </div>
       <div className="card-body">
-        <p>Detailed description of the job posted by the user..</p>
-        <h6>mm/dd/year</h6>
-        <h4>$$$/hour</h4><i className="font-awesome mr-3 text-right far fa-envelope"></i>
+        <p>{description}</p>
+        <h6>{date}</h6>
+        <h4>{payRate}</h4><i className="font-awesome mr-3 text-right far fa-envelope"></i>
         < ApplyButton />
       </div>
     </div>

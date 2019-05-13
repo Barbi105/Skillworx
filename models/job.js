@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const jobSchema = new Schema({
   title: {type: String, unique: true},
   description: String,
-  location: String,
+  zipcode: Number,
   date: Date,
   payRate: String
 })

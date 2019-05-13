@@ -17,7 +17,8 @@ router.route("/logout")
 router.route("/")
   .get(function (req, res) {
     if (req.user) {
-      res.json(req.user);
+      return usersController.getJobs(req, res);
+      //res.json(req.user);
       // res.json("/search");
     } else {
       res.send("no user")
@@ -37,8 +38,16 @@ router.route("/messages")
 router.route("/signup")
   .post(usersController.create);
 
+router.route("/save/:id")
+  .get(usersController.save)
+
+router.route("/myjobs")
+  .get(usersController.getJobs);
+
 // Matches with "/api/users/:id"
 router.route("/:id")
   .get(usersController.findById);
+
+
 
 module.exports = router;

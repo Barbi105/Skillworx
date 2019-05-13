@@ -21,6 +21,12 @@ export default {
   saveUsers: function (userData) {
     return axios.post("/api/users", userData);
   },
+  saveJobById: function (id) {
+    return axios.get("/api/users/save/" + id);
+  },
+  getUserJobs: function() {
+    return axios.get("/api/user/myjobs");
+  },
 
   /*
     AUTHENTICATION

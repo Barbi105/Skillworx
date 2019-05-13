@@ -23,8 +23,8 @@ handleInputChange = event => {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.name ||!this.state.lastName ||!this.state.email || !this.state.password) {
-      // alert("Please fill out all fields");
+    if (!this.state.firstName ||!this.state.lastName ||!this.state.email || !this.state.password) {
+      alert("Please fill out all fields");
     } else if (this.state.password.length < 6) {
       alert(
         `Choose a longer password`

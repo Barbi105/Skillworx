@@ -7,23 +7,6 @@ import ChatBox from './pages/ChatBox';
 
 function App() {
   return (
-    
-    // <div className="App">
-    //   <Navbar />
-    //   <div className="container-fluid">
-    //     {/* <div className="row"> */}
-    //       {/* <Task />
-    //       <Task />
-    //       <Task />
-    //       <Task />
-    //       <Task />
-    //       <Task /> */}
-    //       {/* <Profile /> */}
-    //       <How />
-    //     {/* </div> */}
-    //   </div>
-    // </div>
-    
     <Router>
       <div>
         <Switch>

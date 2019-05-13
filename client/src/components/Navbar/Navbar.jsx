@@ -4,8 +4,8 @@ import "./Navbar.css"
 function Navbar() {
   return (
     <div>
-      <nav class="navbar navbar-light">
-        <span class="navbar-brand mb-0">
+      <nav className="navbar navbar-light">
+        <span className="navbar-brand mb-0">
           <span className="cap-brand">S</span>
           <span className="small-cap-brand">kill</span>
           <span className="cap-brand">W</span>

@@ -23,15 +23,10 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-var io = socketIo(server);
-
 /**
- * Listen on provided port, on all network interfaces.
+ * Pass HTTP server to socket.io.
  */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+var io = socketIo(server);
 
 io.on('connection', socket => {
   var username = socket.handshake.query.username;
@@ -48,6 +43,13 @@ io.on('connection', socket => {
     console.log(`${username} disconnected`);
   })
 })
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.

@@ -1,6 +1,10 @@
 import axios from "axios";
 
 export default {
+
+  /*
+    USERS
+  */
   // Gets all Users
   getUsers: function () {
     return axios.get("/api/users");
@@ -17,14 +21,25 @@ export default {
   saveUsers: function (userData) {
     return axios.post("/api/users", userData);
   },
+
+  /*
+    AUTHENTICATION
+  */
   // Login a user
   login: function (login) {
     return axios.post("/api/users/login", login);
+  },
+  logoutUser: () => {
+    return axios.get("/api/users/logout");
   },
   // Signup a user
   signup: function (signup) {
     return axios.post("/api/users/", signup);
   },
+
+  /*
+    JOBS
+  */
   // Gets all Jobs
   getJobs: function () {
     return axios.get("/api/jobs");
@@ -41,6 +56,10 @@ export default {
   saveJob: function (data) {
     return axios.post("/api/jobs", data);
   },
+
+  /*
+    MESSAGES
+  */
   // Gets all Messages
   getMessages: function () {
     return axios.get(`/api/users/messages`);

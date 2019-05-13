@@ -6,26 +6,24 @@ var passport = require("../../config/passport");
 
 // Find user if login exists
 router.route("/login")
-  .post(passport.authenticate("local"), function(req, res) {
-      //redirect them to page..
-      res.json("/search");
-});
+  .post(passport.authenticate("local"), function (req, res) {
+    //redirect them to page..
+    res.json("/search");
+  });
 
 router.route("/logout")
   .get(usersController.logout);
 
 router.route("/")
-.get(function(req, res){
-  if(req.user){
+  .get(function (req, res) {
+    if (req.user) {
       res.json(req.user);
       // res.json("/search");
-  }else{
+    } else {
       res.send("no user")
-  }
-})
-.post(usersController.create);
-
-
+    }
+  })
+  .post(usersController.create);
 
 // Matches "/api/users/jobs". Populate for user
 router.route("/jobs")
@@ -41,6 +39,6 @@ router.route("/signup")
 
 // Matches with "/api/users/:id"
 router.route("/:id")
-.get(usersController.findById);
+  .get(usersController.findById);
 
 module.exports = router;

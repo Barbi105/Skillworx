@@ -12,4 +12,7 @@ router.route("/:id")
   .put(jobsController.update)
   .delete(jobsController.remove);
 
+router.route("/:type")
+  .get(jobsController.findByType);
+
 module.exports = router;

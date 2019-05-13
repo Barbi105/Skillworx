@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from './pages/landingPage'
 import Search from './pages/Search'
+import PostJob from "./pages/PostJob"
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/search" component={Search} />
+          <Route exact path="/postForm" component={PostJob} />
+
         </Switch>
       </div>
     </Router>

@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt-nodejs");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  name: {
+  firstName: {
     type: String,
     trim: true,
     required: true
@@ -41,6 +41,19 @@ const userSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: "Job"
+    }
+  ],
+  // an embedded document to store Messages
+  messages: [
+    {
+      body: String,
+      createdAt: {type: Date, default: Date.now},
+      to: [{
+            type: Schema.Types.ObjectId,
+            ref: "User"
+          }],
+          // socket#ID, room
+      chatId: String
     }
   ]
 });

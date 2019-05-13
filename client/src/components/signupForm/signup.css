@@ -7,6 +7,11 @@
   background-color: rgba(226, 240,	213, 0.7);
 } */
 
+.leftLanding {
+  color: #fdf9ba;
+  font-family: Playfair Display;
+}
+
 .btn-primary:focus{
   background-color: #3a3a38;
   box-shadow: none;

@@ -7,8 +7,11 @@ import Navbar from "../components/Navbar/Navbar"
 function Landing() {
   return (
     <div>
-      <Navbar />
-      <Login />
+      <Navbar>
+      </Navbar>
+      <Login></Login>
+
+      
       <Signup />
       <How />
     </div>

@@ -8,11 +8,11 @@ import { Redirect } from 'react-router-dom';
 class Profile extends Component {
   state = {
     redirect: false,
-    jobsDone: []
+    jobsApplied: []
   }
 
   componentDidMount() {
-    this.loadJobs();
+    // this.loadJobs();
     this.restrictPage();
   }
 
@@ -25,15 +25,22 @@ class Profile extends Component {
           //load page
           this.setState({ redirect: true })
         }
+        else {
+          this.setState({ jobsApplied: response.data.jobs });
+        }
       })
     };
 
     // adds jobs applied to page
-    loadJobs = () => {
-      API.getUserJobs()
-        .then(res => this.setState({ jobs: res.data }))
-        .catch(err => console.log(err));
-    };
+    // loadJobs = () => {
+    //   console.log("am i running");
+    //   API.getUserJobs()
+    //     .then(res => {
+    //       console.log("jobs array:", res.data.jobs);
+    //       this.setState({ jobsApplied: res.data.jobs });
+    //     })
+    //     .catch(err => console.log(err));
+    // };
 
     render() {
       if (this.state.redirect) {
@@ -77,23 +84,27 @@ class Profile extends Component {
                 <div className="card">
                   <p>Jobs</p>
                   <Row>
-                <Col col-md-4>
-                  <div className="p-3">
-                      {this.state.jobsDone.map(job => {
-                        return (
-                          <Task
-                            key={job.title}
-                            title={job.title}
-                            // zipcode={job.zipcode}
-                            description={job.description}
-                            date={job.date}
-                            // payRate={job.payRate}
-                          />
-                        );
-                      })}
-                  </div>
-                </Col>
-              </Row>
+                    <Col col-md-4>
+                      <div className="p-3">
+                        <ul>
+                          {this.state.jobsApplied.map(job => {
+                            return (
+                              // <Task
+                              //   key={job.title}
+                              //   title={job.title}
+                              //   // zipcode={job.zipcode}
+                              //   description={job.description}
+                              //   date={job.date}
+                              //   // payRate={job.payRate}
+                              // />
+
+                              <li>{job.title}</li>
+                            );
+                          })}
+                          </ul>
+                      </div>
+                    </Col>
+                  </Row>
                 </div>
               </div>
             </div>

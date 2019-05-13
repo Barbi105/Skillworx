@@ -6,7 +6,7 @@ const jobSchema = new Schema({
   description: String,
   location: String,
   date: Date,
-  comments: String
+  payRate: String
 })
 
 const Job = mongoose.model("Job", jobSchema);

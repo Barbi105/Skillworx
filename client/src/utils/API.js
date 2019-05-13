@@ -26,5 +26,9 @@ export default {
 
   logoutUser: () => {
     return axios.get("/api/users/logout");
+  },
+
+  saveJob: function(data) {
+    return axios.post("/api/jobs/", data);
   }
 };

@@ -1,6 +1,7 @@
 import React from 'react';
-import LogoutButton from '../components/Logout/logout'
-import API from '../utils/API';
+import LogoutButton from '../components/Logout/logout';
+import PostForm from '../components/postForm/postForm';
+import API from '../utils/API'
 import { Redirect } from 'react-router-dom';
 class Search extends React.Component {
   
@@ -32,6 +33,8 @@ class Search extends React.Component {
       return (
         <div>
           <LogoutButton />
+          <br/>
+          <PostForm />
         </div>
       )
     }

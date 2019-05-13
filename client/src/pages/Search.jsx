@@ -1,30 +1,43 @@
 import React from 'react';
 import LogoutButton from '../components/Logout/logout';
 import PostForm from '../components/postForm/postForm';
-import API from '../utils/API'
+import Task from '../components/Cards/Task';
+import API from '../utils/API';
 import { Redirect } from 'react-router-dom';
 class Search extends React.Component {
   
   state = {
-    redirect: false
+    redirect: false,
+    jobs: []
   };
 
-  componentDidMount(){
-    
-    API.getUsers()
-    .then((req, res) => {
-        console.log(req);
-        console.log(req.user);
-        if (req.data !== "no user") {
-          //load page
-          res.json("/login", req.data);
-        } else {
-          this.setState({ redirect: true })
-        }
-      })
-      .catch(err => console.log(err));
-   
+  componentDidMount(){  
+   this.loadJobs();
+   this.restrictPage();
   }
+
+  //prevents unauthorized users to acces page
+  restrictPage = () => {
+  API.getUsers()
+  .then((req, res) => {
+      console.log(req);
+      console.log(req.user);
+      if (req.data !== "no user") {
+        //load page
+        res.json("/login", req.data);
+      } else {
+        this.setState({ redirect: true })
+      }
+    })
+    .catch(err => console.log(err));
+  };
+
+  //automatically createa card for each job posted
+  loadJobs = () => {
+    API.getJobs()
+      .then(res => this.setState({ jobs: res.data }))
+      .catch(err => console.log(err));
+  };
 
   render(){
     if (this.state.redirect) {
@@ -34,6 +47,7 @@ class Search extends React.Component {
         <div>
           <LogoutButton />
           <br/>
+          <Task/>
           <PostForm />
         </div>
       )

@@ -3,7 +3,8 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from './pages/landingPage'
 import Search from './pages/Search'
-import ChatBox from './pages/ChatBox';
+import ChatBox from './pages/ChatBox'
+import ProfilePage from './pages/ProfilePage'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/" component={Landing} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/chat" component={ChatBox} />
+          <Route exact path="/profile" component={ProfilePage}/>
         </Switch>
       </div>
     </Router>

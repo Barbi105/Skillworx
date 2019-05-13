@@ -20,9 +20,9 @@ class Search extends React.Component {
    this.restrictPage();
   }
 
-  componentDidUpdate(){
-    this.loadJobType();
-  }
+  // componentDidUpdate(){
+  //   this.loadJobType();
+  // }
 
   //prevents unauthorized users to acces page
   restrictPage = () => {
@@ -66,7 +66,6 @@ class Search extends React.Component {
       .catch(err => console.log(err));
   }
 
-<<<<<<< HEAD
   handleSearch = (e) => {
     e.preventDefault();
     this.loadJobType(this.state.type);
@@ -85,16 +84,13 @@ class Search extends React.Component {
 
 
   render(){
-=======
-  render() {
->>>>>>> master
     if (this.state.redirect) {
       return <Redirect to="/" />
     } else {
       return (
         <div>
-        <LogoutButton />
-<Container fluid>
+          <LogoutButton />
+          <Container fluid>
         <Row fluid>
           <Col col-md-12>
             <div className="mb-3">

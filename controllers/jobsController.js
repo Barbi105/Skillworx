@@ -4,7 +4,7 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Job
-      .find(req.query)
+      .find({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -15,6 +15,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByType: function(req, res) {
+    console.log(req.params.type);
     db.Job
       .find({type: req.params.type})
       .then(dbModel => res.json(dbModel))
@@ -45,7 +46,3 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 };
-
-db.findAll({where: {
-  type: "Yardwork"
-}})

@@ -31,6 +31,7 @@ const userSchema = new Schema({
     ]
   },
   //rating for kittyyyy
+  //need to link this to the jsx
   image: String,
   rating: Number,
   skills: { type: Array },

@@ -1,6 +1,6 @@
 import React from 'react';
 import LogoutButton from '../components/Logout/logout';
-// import PostForm from '../components/postForm/postForm';
+import PostForm from '../components/postForm/postForm';
 import Task from '../components/Cards/Task';
 import API from '../utils/API';
 import {Container, Row, Col} from '../components/grid/grid';
@@ -56,7 +56,7 @@ class Search extends React.Component {
   //automatically createa card for each job posted
   loadJobs = () => {
     API.getJobs()
-      .then(res => this.setState({ jobs: res.data }))
+      .then(res => this.setState({ jobs: res.data }, () => console.log("new data:", this.state.jobs)))
       .catch(err => console.log(err));
   };
 
@@ -143,6 +143,7 @@ class Search extends React.Component {
                         return (
                           <Task
                             key={job.title}
+                            _id={job._id}
                             title={job.title}
                             zipcode={job.zipcode}
                             description={job.description}

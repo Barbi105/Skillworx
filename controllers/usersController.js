@@ -68,5 +68,24 @@ module.exports = {
     req.logout();
     res.send("/");
     console.log(" ~~~~~~~~~~~~~~ Log user out ~~~~~~~~~~~~~~ ");
+  },
+  save: function (req, res){
+    console.log("user id:", req.user.id);
+    console.log("job id:", req.params.id);
+    db.User
+    .update(
+      { _id: req.user.id },
+      { $push: { jobs: req.params.id } }
+    )
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+  getJobs: function(req, res) {
+    db.User.findOne({_id: req.user.id})
+    .populate("jobs")
+    .then(function (dbUsers){
+      console.log(dbUsers);
+      res.json(dbUsers);
+    })
   }
 };

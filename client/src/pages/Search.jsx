@@ -57,7 +57,7 @@ class Search extends React.Component {
   //automatically createa card for each job posted
   loadJobs = () => {
     API.getJobs()
-      .then(res => this.setState({ jobs: res.data }))
+      .then(res => this.setState({ jobs: res.data }, () => console.log("new data:", this.state.jobs)))
       .catch(err => console.log(err));
   };
 

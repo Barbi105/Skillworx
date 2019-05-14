@@ -65,7 +65,7 @@ export class SignupForm extends Component {
                     <div className="form-group">
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control-plaintext"
                         id="nameSignup"
                         name="firstName"
                         placeholder="First Name"
@@ -79,7 +79,7 @@ export class SignupForm extends Component {
                     <div className="form-group">
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control-plaintext"
                         name="lastName"
                         id="lastNameSignup"
                         placeholder="Last Name"
@@ -93,10 +93,10 @@ export class SignupForm extends Component {
                 <div className="form-group">
                   <input
                     type="email"
-                    className="form-control"
+                    className="form-control-plaintext"
                     id="usernameSignup"
                     name="email"
-                    placeholder="email"
+                    placeholder="Email"
                     value={this.state.email}
                     onChange={this.handleInputChange}
                     required
@@ -105,10 +105,10 @@ export class SignupForm extends Component {
                 <div className="form-group">
                   <input
                     type="password"
-                    className="form-control"
+                    className="form-control-plaintext"
                     id="userPasswordSignup"
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     value={this.state.password}
                     onChange={this.handleInputChange}
                     required
@@ -117,7 +117,7 @@ export class SignupForm extends Component {
                 <button
                   onClick={this.handleFormSubmit}
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn-lg"
                   id="signup-submit"
                 >
                   Sign up
@@ -137,16 +137,16 @@ export class SignupForm extends Component {
       //   <div className="jumbotron w-100">
       //     <form>
       //       <div className="form-group">
-      //         <input type="text" className="form-control" id="nameSignup" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange} required />
+      //         <input type="text" className="form-control-plaintext" id="nameSignup" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange} required />
       //       </div>
       //       <div className="form-group">
-      //         <input type="text" className="form-control" name="lastName" id="lastNameSignup" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange} required />
+      //         <input type="text" className="form-control-plaintext" name="lastName" id="lastNameSignup" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange} required />
       //       </div>
       //       <div className="form-group">
-      //         <input type="email" className="form-control" id="usernameSignup" name="email" placeholder="email" value={this.state.email} onChange={this.handleInputChange} required />
+      //         <input type="email" className="form-control-plaintext" id="usernameSignup" name="email" placeholder="email" value={this.state.email} onChange={this.handleInputChange} required />
       //       </div>
       //       <div className="form-group">
-      //         <input type="password" className="form-control" id="userPasswordSignup" name="password" placeholder="password" value={this.state.password} onChange={this.handleInputChange} required />
+      //         <input type="password" className="form-control-plaintext" id="userPasswordSignup" name="password" placeholder="password" value={this.state.password} onChange={this.handleInputChange} required />
       //       </div>
       //       <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary" id="signup-submit">Sign up</button>
       //     </form>

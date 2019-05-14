@@ -6,6 +6,7 @@ import API from '../utils/API';
 import {Container, Row, Col} from '../components/grid/grid';
 import { Redirect } from 'react-router-dom';
 // import { stringify } from 'querystring';
+import Footer from "../components/footer/footer"
 
 class Search extends React.Component {
   state = {
@@ -55,9 +56,11 @@ class Search extends React.Component {
       return (
         <div>
         <Navbar />
+
         <Container fluid>
           <PostForm/>
         </Container>
+        <Footer/>
         </div>
 
       )

@@ -6,6 +6,7 @@ import Search from './pages/Search'
 import ChatBox from './pages/ChatBox'
 import ProfilePage from './pages/ProfilePage'
 import PostJob from "./pages/PostJob"
+import UserSettings from './pages/UserSettings';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/postForm" component={PostJob} />
           <Route exact path="/chat" component={ChatBox} />
           <Route exact path="/profile" component={ProfilePage}/>
+          <Route exact path="/settings" component={UserSettings}/>
           <Route path="/users/:id" component={ProfilePage} />
         </Switch>
       </div>

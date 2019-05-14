@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from "react-router-dom";
 import API from "../../utils/API"
+import "./applyJob.css"
 
 export class ApplyButton extends Component {
 
@@ -20,11 +21,13 @@ export class ApplyButton extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleApply}>Apply</button>
+        <button className="signup-submit" onClick={this.handleApply} type="submit">Apply</button>
       </div>
 
     )
   }
+
+
 }
 
 export default withRouter(ApplyButton);

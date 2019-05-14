@@ -1,41 +1,8 @@
-import React, { Component } from 'react'
-import API from "../../utils/API"
-import "./postForm.css"
+import React from 'react'
 
-export class PostForm extends Component {
-    state={
-        title: "",
-        description: "",
-        zipcode: "",
-        date: "",
-        payRate: "",
-        type: "Select Type"
-      };
-handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    let value = event.target.value;
-    const name = event.target.name;
-
-    // Updating the input's state
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
-    if (!this.state.title||!this.state.description||!this.state.zipcode || !this.state.date || !this.state.payRate || !this.state.type) {
-      alert("Please fill out all fields");
-    } else {
-      API.saveJob(this.state).then((res)=>{
-        console.log(res.data);
-      })
-    }
-  }
-  render() {
-    return (
-        <div id="postForm-jumbotron" className="jumbotron"  >
+function UserSettings() {
+  return (
+    <div id="postForm-jumbotron" className="jumbotron"  >
           <h2>Post a job:</h2>
             <form>
                   <div className="form-group">
@@ -68,7 +35,7 @@ handleInputChange = event => {
                   <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary signup-submit-barb" id="signup-submit">Post job</button>
                 </form>
         </div>
-        ) 
-      }
-    }
-    export default PostForm;
+  )
+}
+
+export default UserSettings

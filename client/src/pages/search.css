@@ -6,6 +6,10 @@ body{
   background-color: #fdf9ba;
   margin: 200px;
 }
+
+/* #task-card-container {
+  height: 300px;
+} */
 #searchTag {
   margin-top: 50px;
 }

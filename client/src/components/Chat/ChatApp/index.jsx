@@ -1,4 +1,4 @@
-import '../../../styles/ChatApp.css';
+import './ChatApp.css';
 import React from 'react';
 import io from 'socket.io-client';
 import config from '../../../config';
@@ -63,7 +63,7 @@ class ChatApp extends React.Component {
     // Here we want to render the main chat application components
     return (
       <div className="container">
-        <h3>React Chat App</h3>
+        <h3>Chat</h3>
         <Messages messages={this.state.messages} />
         <ChatInput onSend={this.sendHandler} />
       </div>

@@ -8,7 +8,6 @@ function Landing() {
     <div>
       <LandingNav></LandingNav>
 
-      
       <Signup />
       <How />
     </div>

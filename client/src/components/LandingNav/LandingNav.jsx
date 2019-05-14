@@ -4,7 +4,7 @@ import API from "../../utils/API"
 import "./LandingNav.css"
 
 export class LandingNav extends Component {
-  state={
+  state = {
     email: "",
     password: "",
     redirectTo: null
@@ -25,10 +25,10 @@ export class LandingNav extends Component {
     event.preventDefault();
     if (!this.state.email || !this.state.password) {
       alert("Enter email and password!!!");
-    }  else {
+    } else {
       const { email, password } = this.state;
 
-      API.login({ email, password }).then((res)=>{
+      API.login({ email, password }).then((res) => {
         this.setState({ redirectTo: res.data });
       }).catch(err => {
         console.log(err);
@@ -42,31 +42,37 @@ export class LandingNav extends Component {
     }
 
     return (
-      
+
       <div>
         <nav className="navbar navbar-light">
           <span className="navbar-brand mb-0">
             <span className="cap-brand">S</span>
             <span className="small-cap-brand">kill</span>
-            <span className="cap-brand">W</span>
+            <span className="cap-brand w">W</span>
             <span className="small-cap-brand">orx</span>
           </span>
           <div className="d-flex">
             <form className="login">
-              <div className="form-group form-inline">
-                <input type="text" className="form-control" id="usernameLogin" placeholder="email" name="email" value={this.state.email} onChange={this.handleInputChange} />
-                <input type="password" className="form-control" id="userPasswordLogin" placeholder="password" name="password" value={this.state.password} onChange={this.handleInputChange}/>
-                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary" id="login-submit">login</button>
+              <div className="row">
+                <div className="col-md-4 formFieldLogin">
+                  <input type="text" className="form-control-plaintext loginField" id="usernameLogin" placeholder="   Email" name="email" value={this.state.email} onChange={this.handleInputChange} />
+                </div>
+                <div className="col-md-4 formFieldLogin">
+                  <input type="password" className="form-control-plaintext loginField" id="userPasswordLogin" placeholder="   Password" name="password" value={this.state.password} onChange={this.handleInputChange} />
+                </div>
+                <div className="col-md-4 formFieldLogin">
+                  <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary" id="login-submit">Login</button>
+                </div>
               </div>
             </form>
           </div>
-          
+
         </nav>
       </div>
 
 
-          
-        ) 
-      }
-    }
-    export default LandingNav;
+
+    )
+  }
+}
+export default LandingNav;

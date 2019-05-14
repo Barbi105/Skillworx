@@ -3,14 +3,10 @@
   font-weight: bold;
   margin-left: 25px;
 }
-.navbar{
-  /* margin-left:70px;
-  margin-right:70px; */
-  /* width:100%; */
+.notLanding{
   background-color: rgb(214, 235, 249);
   padding: 0px;
   margin: 0px;
-
 }
 .cap-brand {
   font-size: 4.5rem;

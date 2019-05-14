@@ -6,7 +6,12 @@ const jobSchema = new Schema({
   description: String,
   zipcode: Number,
   date: Date,
-  payRate: String
+  payRate: String,
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
+  type: String
 })
 
 const Job = mongoose.model("Job", jobSchema);

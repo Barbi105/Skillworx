@@ -25,6 +25,12 @@ export default {
   saveUsers: function (userData) {
     return axios.post("/api/users", userData);
   },
+  saveJobById: function (id) {
+    return axios.get("/api/users/save/" + id);
+  },
+  getUserJobs: function () {
+    return axios.get("/api/user/myjobs");
+  },
 
   /*
     AUTHENTICATION
@@ -33,7 +39,7 @@ export default {
   login: function (login) {
     return axios.post("/api/users/login", login);
   },
-  logoutUser: () => {
+  logoutUser: function () {
     return axios.get("/api/users/logout");
   },
   // Signup a user
@@ -51,6 +57,9 @@ export default {
   // Gets the job with the given id
   getJobById: function (id) {
     return axios.get("/api/jobs/" + id);
+  },
+  getJobByType: function (type) {
+    return axios.get("/api/jobs/" + type);
   },
   // Deletes the job with the given id
   deleteJob: function (id) {

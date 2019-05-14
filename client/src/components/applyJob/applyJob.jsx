@@ -1,24 +1,19 @@
 import React, {Component} from 'react'
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import API from "../../utils/API"
 
 export class ApplyButton extends Component {
-    state={
-        redirectTo:null
-    };
-   
     handleApply = event => {
-        // event.preventDefault();
-        // API.logoutUser().then((res)=>{
-        //     this.setState({ redirectTo: res.data });
-        //   }).catch(err => {
-        //     console.log(err);
-        //   })
+        event.preventDefault();
+        console.log("clicked on button")
+        API.saveJobById(this.props._id).then((res)=>{
+          console.log(res.data);
+        })
         }
       render(){
-        if (this.state.redirectTo) {
-            return <Redirect to={this.state.redirectTo} />
-          }
+        // if (this.state.redirectTo) {
+        //     return <Redirect to={this.state.redirectTo} />
+        //   }
   return (
 
     <div> 

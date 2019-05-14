@@ -9,7 +9,8 @@ function Task({
   description,
   zipcode,
   date,
-  payRate
+  payRate,
+  _id
 }) {
   return (
     <div >
@@ -20,11 +21,11 @@ function Task({
         <h4 className="text-right">{title}</h4>
         <i className="font-awesome text-right fas fa-map-marker-alt"> {zipcode}</i>
       </div>
-      <div className="card-body">
+      <div className="card-body" id="taskCard">
         <p>{description}</p>
         <h6>{date}</h6>
         <h4>{payRate}</h4><i className="font-awesome mr-3 text-right far fa-envelope"></i>
-        < ApplyButton />
+        <ApplyButton _id={_id} />
       </div>
     </div>
 

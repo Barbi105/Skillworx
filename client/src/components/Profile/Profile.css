@@ -1,6 +1,6 @@
 #user-pic {
   width: 50%;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 #skill-block {
@@ -17,3 +17,9 @@
   color: #ddd;
   margin-bottom: 5px;
 }
+
+.job-card {
+  width: 18rem;
+}
+
+/* pastel blue: #D7EBFA */

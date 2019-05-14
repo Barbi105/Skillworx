@@ -1,30 +1,23 @@
 import React from 'react'
 import "./Navbar.css"
+import DropDown from '../NavbarDropDown/index'
 
 function Navbar() {
   return (
-    <div>
-      <nav class="navbar navbar-light">
-        <span class="navbar-brand mb-0">
-          <span className="cap-brand">S</span>
-          <span className="small-cap-brand">kill</span>
-          <span className="cap-brand">W</span>
-          <span className="small-cap-brand">orx</span>
-        </span>
-        <div className="d-flex">
-          <div className="nav-item">
-            <p>Services</p>
-          </div>
-          <div className="nav-item">
-            <p>Sign Up</p>
-          </div>
-          <div className="nav-item">
-            <p>Log In</p>
-          </div>
-        </div>
-        
-      </nav>
-    </div>
+    <div id="fixedNavbar">
+    <nav className="navbar navbar-light notLanding" >
+      <span className="navbar-brand mb-0">
+        <span className="cap-brand">S</span>
+        <span className="small-cap-brand">kill</span>
+        <span className="cap-brand w">W</span>
+        <span className="small-cap-brand">orx</span>
+      </span>
+      <div className="d-flex mr-5">
+     <DropDown/>
+      </div>
+
+    </nav>
+  </div>
   )
 }
 

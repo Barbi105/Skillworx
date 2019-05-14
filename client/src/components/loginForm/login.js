@@ -42,15 +42,15 @@ export class LoginForm extends Component {
 
     return (
         <div className="jumbotron">
-                <form className="login">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="usernameLogin" placeholder="username" name="email" value={this.state.email} onChange={this.handleInputChange} />
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control" id="userPasswordLogin" placeholder="password" name="password" value={this.state.password} onChange={this.handleInputChange}/>
-                  </div>
-                  <button onClick={this.handleFormSubmit} type="submit" class="btn btn-primary" id="login-submit">login</button>
-                </form>
+          <form className="login">
+            <div className="form-group">
+              <input type="text" className="form-control" id="usernameLogin" placeholder="username" name="email" value={this.state.email} onChange={this.handleInputChange} />
+            </div>
+            <div className="form-group">
+              <input type="password" className="form-control" id="userPasswordLogin" placeholder="password" name="password" value={this.state.password} onChange={this.handleInputChange}/>
+            </div>
+            <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary" id="login-submit">login</button>
+          </form>
         </div>
         ) 
       }

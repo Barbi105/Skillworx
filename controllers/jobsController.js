@@ -4,7 +4,7 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Job
-      .find(req.query)
+      .find({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -14,14 +14,17 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByType: function(req, res) {
+    console.log(req.params.type);
+    db.Job
+      .find({type: req.params.type})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
+    req.body.createdBy = req.user._id
     db.Job
       .create(req.body)
-      .then(dbJob => db.User.findOneAndUpdate(
-        { _id: req.user._id}, 
-        { $push: {jobs: dbJob._id}}, 
-        {new: true}
-        ))
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

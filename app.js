@@ -7,6 +7,9 @@ var session = require("express-session");
 var passport = require("./config/passport");
 var app = express();
 var routes = require('./routes');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+
 
 // Serve up static assets on heroku
 if (process.env.NODE_ENV === "production") {
@@ -17,7 +20,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(session({ secret: "opus", resave: true, saveUninitialized: true }));
+app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 

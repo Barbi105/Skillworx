@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar/Navbar'
 import Task from '../components/Cards/Task';
 import API from '../utils/API';
+import Footer from '../components/footer/footer'
 import "./search.css"
 import { Container, Row, Col } from '../components/grid/grid';
 import { Redirect } from 'react-router-dom';
@@ -152,6 +153,7 @@ class Search extends React.Component {
                   </Row>
               
           </div>
+          <Footer/>
         </div>
 
 

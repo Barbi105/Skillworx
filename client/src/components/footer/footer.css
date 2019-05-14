@@ -1,0 +1,8 @@
+#fixedFooter{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* background-color: rgba(51, 102, 153, 1); */
+    /* background-color: rgb(167, 166, 166); */
+    background-color: rgb(214, 235, 249);
+}

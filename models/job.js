@@ -10,7 +10,8 @@ const jobSchema = new Schema({
   createdBy: {
     type: Schema.Types.ObjectId,
     ref: "User"
-  }
+  },
+  type: String
 })
 
 const Job = mongoose.model("Job", jobSchema);

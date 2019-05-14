@@ -54,6 +54,9 @@ export default {
   getJobById: function (id) {
     return axios.get("/api/jobs/" + id);
   },
+  getJobByType: function (type) {
+    return axios.get("/api/jobs/" + type);
+  },
   // Deletes the job with the given id
   deleteJob: function (id) {
     return axios.delete("/api/jobs/" + id);

@@ -15,9 +15,9 @@ function Navbar() {
           <div className="nav-item">
             <p>Services</p>
           </div>
-          <div className="nav-item">
+          {/* <div className="nav-item">
             <p>Sign Up</p>
-          </div>
+          </div> */}
           <div className="nav-item">
             <p>Log In</p>
           </div>

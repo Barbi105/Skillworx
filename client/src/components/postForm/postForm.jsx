@@ -7,7 +7,8 @@ export class PostForm extends Component {
         description: "",
         zipcode: "",
         date: "",
-        payRate: ""
+        payRate: "",
+        type: "Select Type"
       };
 handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -23,7 +24,7 @@ handleInputChange = event => {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.title||!this.state.description||!this.state.zipcode || !this.state.date || !this.state.payRate) {
+    if (!this.state.title||!this.state.description||!this.state.zipcode || !this.state.date || !this.state.payRate || !this.state.type) {
       alert("Please fill out all fields");
     } else {
       API.saveJob(this.state).then((res)=>{
@@ -37,6 +38,18 @@ handleInputChange = event => {
             <form>
                   <div className="form-group">
                     <input type="text" className="form-control" id="titleJob" name="title" placeholder="Title" value={this.state.title} onChange={this.handleInputChange} required/>
+                  </div>
+                  <div className="form-group" >
+                  <select name="type" onChange={this.handleInputChange}>
+                      <option value="" disabled selected>Select your option</option>
+                      <option value="Housework">Housework</option>
+                      <option value="Yardwork">Yardwork</option>
+                      <option value="Furniture Assembly">Furniture Assembly</option>
+                      <option value="Tutoring">Tutoring</option>
+                      <option value="Pet Care">Pet Care</option>
+                      <option value="IT">IT</option>
+                      <option value="Misc">Misc</option>
+                    </select>
                   </div>
                   <div className="form-group">
                     <textarea className="form-control" name="description" id="descriptionJob" rows="5" placeholder="Please decsribe the task ina s much detail as possible" value={this.state.description} onChange={this.handleInputChange} required/>

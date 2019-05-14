@@ -22,13 +22,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    req.body.createdBy = req.user._id
     db.Job
       .create(req.body)
-      .then(dbJob => db.User.findOneAndUpdate(
-        { _id: req.user._id}, 
-        { $push: {jobs: dbJob._id}}, 
-        {new: true}
-        ))
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

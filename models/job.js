@@ -7,6 +7,10 @@ const jobSchema = new Schema({
   zipcode: Number,
   date: Date,
   payRate: String,
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
   type: String
 })
 

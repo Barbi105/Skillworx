@@ -1,3 +1,6 @@
+.card-body{
+  background-color: rgb(214, 235, 249)
+}
 h2 {
   margin-bottom: 50px;
   font-size: 4rem;
@@ -7,11 +10,6 @@ h2 {
 }
 
 #how-section {
-  /* background-color: rgba(51, 102, 153, 1); */
-  /* background-color: rgba(221,221,221, 1); */
-  background-color: #fdf9ba;
-
-
   padding-bottom: 100px;
 }
 

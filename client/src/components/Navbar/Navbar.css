@@ -1,38 +1,24 @@
-.navbar {
-  background-color: rgba(51, 102, 153, 1);
-  margin-bottom: 50px;
-  border-bottom: 3px solid #222;
-}
-
 .navbar-brand{
-  font-family: Yellowtail;
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
+  margin-left: 25px;
 }
-
+.notLanding{
+  background-color: rgb(214, 235, 249);
+  padding: 0px;
+  margin: 0px;
+}
 .cap-brand {
-  font-size: 3rem;
-  color: #ddd;
-  text-decoration: underline;
+  font-size: 4.5rem;
+  color: rgba(18, 17, 17, 0.831);
+  letter-spacing: -3px;
 }
-
-.nav-item{
-  background-color: #ddd;
-  color: rgba(51, 102, 153, 1);
-  padding: 5px 10px;
-  border-top: 3px solid #222;
-  float: right;
-  margin-right: 5px;
-  transition-duration: 250ms;
-  transition-timing-function: ease-in;
-}
-
-.nav-item:hover {
-  background-color: #fff;
-  transition-duration: 250ms;
-  transition-timing-function: ease-in;
+.w{
+  letter-spacing: -8px;
 }
 
 .small-cap-brand {
-  font-size: 1.5rem;
-  color: #ddd;
+  font-size: 2.5rem;
+  color: rgba(18, 17, 17, 0.831);
 
 }

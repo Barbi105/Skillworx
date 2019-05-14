@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Redirect } from "react-router-dom";
 import API from "../../utils/API"
+import './logout.css'
 
 export class LogoutButton extends Component {
     state={
@@ -22,7 +23,7 @@ export class LogoutButton extends Component {
   return (
 
     <div> 
-        <button onClick={this.handleLogout}  type="submit">Logout</button>
+        <button id='logout-submit' onClick={this.handleLogout}  type="submit">Logout</button>
     </div>
     
   )

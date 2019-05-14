@@ -17,7 +17,7 @@ export class ApplyButton extends Component {
   return (
 
     <div> 
-        <button onClick={this.handleApply}  type="submit">Apply</button>
+        <button className="btn-primary w-100" onClick={this.handleApply}  type="submit">Apply</button>
     </div>
     
   )

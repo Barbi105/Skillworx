@@ -21,9 +21,9 @@ class Search extends React.Component {
 
 
   
-  componentDidUpdate(prevState){
-    this.loadJobType(this.state.type);
-  }
+  // componentDidUpdate(prevState){
+  //   this.loadJobType(this.state.type);
+  // }
 
   //prevents unauthorized users to acces page
   restrictPage = () => {
@@ -67,11 +67,11 @@ class Search extends React.Component {
       .catch(err => console.log(err));
   }
 
-  // handleSearch = (e) => {
-  //   e.preventDefault();
-  //   console.log(this.state.type);
-  //   this.loadJobType(this.state.type);
-  // }
+  handleSearch = (e) => {
+    e.preventDefault();
+    console.log(this.state.type);
+    this.loadJobType(this.state.type);
+  }
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -149,7 +149,7 @@ class Search extends React.Component {
               <div className="col-12">
                 <h1 id="search-heading" className="text-center">Find an opportunity</h1>
               </div>
-              <div className="col-12 form-group">
+              <div className="col-12 form-group d-flex">
                 <select className="custom-select" name="type" onChange={this.handleInputChange}>
                   <option value="" disabled selected>Select your option</option>
                   <option value="Housework">Housework</option>
@@ -160,24 +160,22 @@ class Search extends React.Component {
                   <option value="IT">IT</option>
                   <option value="Misc">Misc</option>
                 </select>
-                {/* <button onClick={this.handleSearch}>
+                <button onClick={this.handleSearch}>
                   Search
-                </button> */}
-                <div className="p-3">
-                        {this.state.jobs.map(job => {
-                          return (
-                            <Task
-                              key={job.title}
-                              title={job.title}
-                              zipcode={job.zipcode}
-                              description={job.description}
-                              date={job.date}
-                              payRate={job.payRate}
-                            />
-                          );
-                        })}
-                      </div>
+                </button>
               </div>
+                {this.state.jobs.map(job => {
+                  return (
+                    <Task
+                      key={job.title}
+                      title={job.title}
+                      zipcode={job.zipcode}
+                      description={job.description}
+                      date={job.date}
+                      payRate={job.payRate}
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>

@@ -40,3 +40,9 @@
   transition-duration: 250ms;
   transition-timing-function: ease-in;
 }
+
+/* @media only screen and (max-width: 768px){
+  .card {
+    width: 75%
+  }
+} */

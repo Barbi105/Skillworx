@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import LogoutButton from '../Logout/logout';
 import API from '../../utils/API';
 
 class DropDown extends Component {
@@ -26,7 +27,24 @@ class DropDown extends Component {
       render(){
           return(
               <div>
-            <p>{this.state.firstName} {this.state.lastName}</p>
+
+<div class="dropdown">
+  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  {this.state.firstName} {this.state.lastName}
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="/search">Search</a>
+    <a class="dropdown-item" href="/profile">Profile</a>
+    <a class="dropdown-item" href="/postForm">Post Job</a>
+    <a class="dropdown-item" href="#"><LogoutButton /></a>
+  </div>
+
+</div>
+
+
+
+            
               </div>
           )
       }

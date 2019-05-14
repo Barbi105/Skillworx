@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 // import { Redirect } from "react-router-dom";
 import API from "../../utils/API"
+import "./applyJob.css"
 
 export class ApplyButton extends Component {
     handleApply = event => {
@@ -17,7 +18,7 @@ export class ApplyButton extends Component {
   return (
 
     <div> 
-        <button onClick={this.handleApply}  type="submit">Apply</button>
+        <button className="signup-submit" onClick={this.handleApply}  type="submit">Apply</button>
     </div>
     
   )

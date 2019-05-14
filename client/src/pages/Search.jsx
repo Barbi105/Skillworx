@@ -51,9 +51,14 @@ class Search extends React.Component {
   };
 
   loadJobType = (type) => {
-    API.getJobByType(type)
+    if(type ==="All") {
+      this.loadJobs();
+    }else{
+      API.getJobByType(type)
       .then(res => this.setState({ jobs: res.data }))
       .catch(err => console.log(err));
+    }
+    
   }
   //automatically createa card for each job posted
   loadJobs = () => {
@@ -101,10 +106,11 @@ class Search extends React.Component {
                 </Col>
                 </Row>
                 <Row>
-                  <div className='col-md-12'>
+                  <div className='col-md-12 d-flex'>
 
                     <select id="selectTypeMenu" name="type" onChange={this.handleInputChange}>
                       <option value="" disabled selected>Choose type</option>
+                      <option value="All">Show All</option>
                       <option value="Housework">Housework</option>
                       <option value="Yardwork">Yardwork</option>
                       <option value="Furniture Assembly">Furniture Assembly</option>
@@ -113,14 +119,15 @@ class Search extends React.Component {
                       <option value="IT">IT</option>
                       <option value="Misc">Misc</option>
                       </select>
+                      {/* <button  onClick={this.handleSearch}>
+                        Search
+                      </button> */}
                     </div>
-{/* 
-                    <div className='col-md-6'>
+ 
+                    {/* <div className='col-md-6'>
                    
-                    <button id="search-submit" onClick={this.handleSearch}>
-                      Search
-                    </button>
-                  </div> */}
+
+                    </div>  */}
 
                 </Row>
           
@@ -137,7 +144,7 @@ class Search extends React.Component {
                     
                         {this.state.jobs.map(job => {
                           return (
-                            <div className='col-md-4'>
+                            <div id="task-card-container" className='col-12 col-sm-12 col-md-4 col-lg-4'>
                             <Task
                               key={job.title}
                               _id={job._id}

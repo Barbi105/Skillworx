@@ -1,25 +1,33 @@
-.card {
+.task-card {
   padding: 0;
   transition-duration: 250ms;
   transition-timing-function: ease-in;
+  /* height: 300px; */
+
 }
 #taskCard{
   background-color: white;
   border: 1px solid black;
 
 }
+.task-card-body{
+  background: url("/assets/images/white_wall.png");
+  background-repeat: repeat;
+  /* overflow-y: scroll; */
+}
 
-.card:hover {
+/* .card:hover {
   box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.5);
   transition-duration: 250ms;
   transition-timing-function: ease-in;
-}
+} */
 
 .card-header {
   background-color: rgba(51, 102, 153, 1);
   color: #ddd;
   position: relative;
   height: 100%;
+
 }
 
 .card-header-text {
@@ -40,11 +48,33 @@
   transition-timing-function: ease-in;
 }
 
-.font-awesome:hover {
-  color: #aaa;
+.fa-envelope:hover {
+  color: #c094cc;
   transition-duration: 250ms;
   transition-timing-function: ease-in;
 }
-div.card-header{
-  border: none;
+
+.fa-map-marker-alt {
+  margin-right: 10px;
+}
+
+.fa-envelope {
+  /* float:left; */
+  /* margin-top: 10px; */
+  font-weight: 1000;
+  margin-right: 10px;
+
+}
+
+#date{
+  margin-top: 5px;
+}
+
+#date, #payRate {
+  font-weight: bold;
+
+}
+
+.card-body p {
+  margin: 0;
 }

@@ -17,9 +17,13 @@ module.exports = {
   create: function (req, res) {
     db.User
       .create(req.body)
-      .then(user => res.json(user))
+      .then(user => {
+        res.json(user);
+      })
       // .then(res.json(307, "/api/users/login"))
-      .catch(err => res.status(422).json(err));
+      .catch(err => {
+        res.status(422).json(err);
+      });
   },
   update: function (req, res) {
     db.User

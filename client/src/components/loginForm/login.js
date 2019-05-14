@@ -28,6 +28,7 @@ export class LoginForm extends Component {
       const { email, password } = this.state;
 
       API.login({ email, password }).then((res)=>{
+        console.log(res.data);
         this.setState({ redirectTo: res.data });
       }).catch(err => {
         console.log(err);

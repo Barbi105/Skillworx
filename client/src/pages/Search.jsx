@@ -1,7 +1,5 @@
 import React from 'react';
-import LogoutButton from '../components/Logout/logout';
 import Navbar from '../components/Navbar/Navbar'
-import PostForm from '../components/postForm/postForm';
 import Task from '../components/Cards/Task';
 import API from '../utils/API';
 import {Container, Row, Col} from '../components/grid/grid';
@@ -91,7 +89,6 @@ class Search extends React.Component {
       return (
         <div>
           <Navbar/>
-          <LogoutButton />
           <div class="jumbotron">
           <Container fluid>
         <Row fluid>
@@ -151,7 +148,6 @@ class Search extends React.Component {
           </Col>
         </Row>
         </div>
-        {/* <PostForm /> */}
       </div>
 
       

@@ -1,0 +1,18 @@
+a{
+    font-size: 18px;
+    color: rgba(18, 17, 17, 0.831);
+}
+a:hover{
+    text-decoration:none !important;
+    color: 
+}
+/* .logoutSection{
+    background-color: rgb(214, 235, 249) !important;
+}
+.logoutSection:hover{
+    background-color: rgb(67, 175, 247) !important;
+} */
+.dropdown-menu{
+    padding: 0px;
+    text-align: center;
+}

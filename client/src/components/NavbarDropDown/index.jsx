@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import LogoutButton from '../Logout/logout';
 import API from '../../utils/API';
+import './style.css'
 
 class DropDown extends Component {
     state={
@@ -37,7 +38,7 @@ class DropDown extends Component {
     <a class="dropdown-item" href="/search">Search</a>
     <a class="dropdown-item" href="/profile">Profile</a>
     <a class="dropdown-item" href="/postForm">Post Job</a>
-    <a class="dropdown-item" href="#"><LogoutButton /></a>
+    <a class="dropdown-item logoutSection" href="#"><LogoutButton /></a>
   </div>
 
 </div>

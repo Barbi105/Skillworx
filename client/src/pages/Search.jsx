@@ -2,7 +2,8 @@ import React from 'react';
 import Navbar from '../components/Navbar/Navbar'
 import Task from '../components/Cards/Task';
 import API from '../utils/API';
-import {Container, Row, Col} from '../components/grid/grid';
+import "./search.css"
+import { Container, Row, Col } from '../components/grid/grid';
 import { Redirect } from 'react-router-dom';
 // import { stringify } from 'querystring';
 
@@ -14,9 +15,9 @@ class Search extends React.Component {
     type: ''
   };
 
-  componentDidMount(){  
-   this.loadJobs();
-   this.restrictPage();
+  componentDidMount() {
+    this.loadJobs();
+    this.restrictPage();
   }
 
   // componentDidUpdate(){
@@ -26,25 +27,25 @@ class Search extends React.Component {
   //prevents unauthorized users to acces page
   restrictPage = () => {
     API.getUsers()
-    .then(response => {
-      console.log(response);
-      if (response.data === "no user") {
-        //load page
-        this.setState({ redirect: true })
-      }
-    });
-  // API.getUsers()
-  // .then((req, res) => {
-  //     console.log(req);
-  //     console.log(req.user);
-  //     if (req.data !== "no user") {
-  //       //load page
-  //       res.json("/login", req.data);
-  //     } else {
-  //       this.setState({ redirect: true })
-  //     }
-  //   })
-  //   .catch(err => console.log(err));
+      .then(response => {
+        console.log(response);
+        if (response.data === "no user") {
+          //load page
+          this.setState({ redirect: true })
+        }
+      });
+    // API.getUsers()
+    // .then((req, res) => {
+    //     console.log(req);
+    //     console.log(req.user);
+    //     if (req.data !== "no user") {
+    //       //load page
+    //       res.json("/login", req.data);
+    //     } else {
+    //       this.setState({ redirect: true })
+    //     }
+    //   })
+    //   .catch(err => console.log(err));
   };
 
   loadJobType = (type) => {
@@ -61,7 +62,7 @@ class Search extends React.Component {
 
   loadUser = () => {
     API.getUserById()
-      .then(res => this.setState({user: res.data}))
+      .then(res => this.setState({ user: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -82,23 +83,25 @@ class Search extends React.Component {
   };
 
 
-  render(){
+  render() {
     if (this.state.redirect) {
       return <Redirect to="/" />
     } else {
       return (
         <div>
-          <Navbar/>
-          <div class="jumbotron">
-          <Container fluid>
-        <Row fluid>
-          <Col col-md-12>
-            <div className="mb-3">
-              <p>Search for Jobs</p>
-              <Row>
+          <Navbar />
+          <div class="jumbotron searchJumbotron">
+            <Container fluid>
+              <Row fluid>
                 <Col col-md-12>
-               
-                  <select name="type" onChange={this.handleInputChange}>
+
+                  <h2 id="searchTag">Search for Jobs</h2>
+                </Col>
+                </Row>
+                <Row>
+                  <div className='col-md-12'>
+
+                    <select id="selectTypeMenu" name="type" onChange={this.handleInputChange}>
                       <option value="" disabled selected>Select your option</option>
                       <option value="Housework">Housework</option>
                       <option value="Yardwork">Yardwork</option>
@@ -107,50 +110,51 @@ class Search extends React.Component {
                       <option value="Pet Care">Pet Care</option>
                       <option value="IT">IT</option>
                       <option value="Misc">Misc</option>
-
-
-                    </select>
-                    <button onClick={this.handleSearch}>
+                      </select>
+                    </div>
+{/* 
+                    <div className='col-md-6'>
+                   
+                    <button id="search-submit" onClick={this.handleSearch}>
                       Search
                     </button>
-                </Col>
-              </Row>
-            </div>
-          </Col>
-        </Row>
-        </Container>
-        </div>
-        <div className="jumbotron">
-        <Row>
-          <Col col-md-12>
-            <div className="p-3">
-              <p>Results</p>
-              <Row>
-                <Col col-md-4>
-                  <div className="p-3">
-                      {this.state.jobs.map(job => {
-                        return (
-                          <Task
-                            key={job.title}
-                            _id={job._id}
-                            title={job.title}
-                            zipcode={job.zipcode}
-                            description={job.description}
-                            date={job.date}
-                            payRate={job.payRate}
-                          />
-                        );
-                      })}
-                  </div>
-                </Col>
-              </Row>
-            </div>
-          </Col>
-        </Row>
-        </div>
-      </div>
+                  </div> */}
 
-      
+                </Row>
+          
+            </Container>
+          </div>
+          <div className="jumbotron resultsJumbotron">
+            <Row>
+              <Col col-md-12>
+                
+                  <h2>Results: </h2>
+                  </Col>
+                  </Row>
+                  <Row>
+                    
+                        {this.state.jobs.map(job => {
+                          return (
+                            <div className='col-md-4'>
+                            <Task
+                              key={job.title}
+                              _id={job._id}
+                              title={job.title}
+                              zipcode={job.zipcode}
+                              description={job.description}
+                              date={job.date}
+                              payRate={job.payRate}
+                            />
+                            </div>
+                          );
+                        })}
+                    
+                  </Row>
+              
+          </div>
+        </div>
+
+
       )
     }
   }

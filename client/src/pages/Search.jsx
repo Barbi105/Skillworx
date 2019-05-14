@@ -95,7 +95,7 @@ class Search extends React.Component {
               <Row fluid>
                 <Col col-md-12>
 
-                  <h2 id="searchTag">Search for Jobs</h2>
+                  <h2 id="searchTag">Search for Jobs: </h2>
                 </Col>
                 </Row>
                 <Row>

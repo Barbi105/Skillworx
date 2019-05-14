@@ -58,7 +58,7 @@ export class SignupForm extends Component {
               </p>
             </div>
             <div className="col-md-6 text-center">
-              <h3>Join the community..</h3>
+              <h3>Join the Community</h3>
               <form className="ml-4">
                 <div className="row">
                   <div className="col-md-6">

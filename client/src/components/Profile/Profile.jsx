@@ -6,20 +6,32 @@ import { Row, Col } from '../grid/grid';
 import { Redirect } from 'react-router-dom';
 
 class Profile extends Component {
-  state = {
-    redirect: false,
-    jobsApplied: [],
-    id: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    image: '',
-    skills: []
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      redirect: false,
+      jobsApplied: [],
+      id: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      image: '',
+      skills: [],
+    };
+
   }
 
   componentDidMount() {
     this.restrictPage();
-    this.loadUser();
+
+    const { match: { params } } = this.props;
+
+    if (params.id) {
+      this.loadUser(params.id);
+    } else {
+      this.loadUser(this.state.id)
+    }
   }
 
   // Prevents unauthenticated access
@@ -37,8 +49,8 @@ class Profile extends Component {
   };
 
   // Get user information from db applied to page
-  loadUser = () => {
-    API.getUserById(this.state.id)
+  loadUser = (id) => {
+    API.getUserById(id)
       .then(response => {
         this.setState({
           firstName: response.data.firstName,

@@ -41,7 +41,7 @@ export class SignupForm extends Component {
   };
   render() {
     return (
-      <div className="jumbotron">
+      <div className="jumbotron landingJumnotron" >
         <Container fluid>
           <div className="row">
             <div className="col-md-6" id="leftMessage">

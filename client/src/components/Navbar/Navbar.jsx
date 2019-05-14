@@ -4,7 +4,7 @@ import DropDown from '../NavbarDropDown/index'
 
 function Navbar() {
   return (
-    <div>
+    <div id="fixedNavbar">
     <nav className="navbar navbar-light notLanding" >
       <span className="navbar-brand mb-0">
         <span className="cap-brand">S</span>

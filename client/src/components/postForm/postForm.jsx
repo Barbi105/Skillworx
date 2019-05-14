@@ -34,7 +34,7 @@ handleInputChange = event => {
   }
   render() {
     return (
-        <div className="jumbotron">
+        <div className="jumbotron" >
             <form>
                   <div className="form-group">
                     <input type="text" className="form-control" id="titleJob" name="title" placeholder="Title" value={this.state.title} onChange={this.handleInputChange} required/>

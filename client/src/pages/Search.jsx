@@ -6,6 +6,7 @@ import Footer from '../components/footer/footer'
 import "./search.css"
 import { Container, Row, Col } from '../components/grid/grid';
 import { Redirect } from 'react-router-dom';
+import moment from "moment";
 // import { stringify } from 'querystring';
 
 class Search extends React.Component {
@@ -103,7 +104,7 @@ class Search extends React.Component {
                   <div className='col-md-12'>
 
                     <select id="selectTypeMenu" name="type" onChange={this.handleInputChange}>
-                      <option value="" disabled selected>Select your option</option>
+                      <option value="" disabled selected>Choose type</option>
                       <option value="Housework">Housework</option>
                       <option value="Yardwork">Yardwork</option>
                       <option value="Furniture Assembly">Furniture Assembly</option>
@@ -143,7 +144,7 @@ class Search extends React.Component {
                               title={job.title}
                               zipcode={job.zipcode}
                               description={job.description}
-                              date={job.date}
+                              date={moment(job.date).format("MM/DD/YYYY")}
                               payRate={job.payRate}
                             />
                             </div>

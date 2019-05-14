@@ -1,7 +1,14 @@
+#fixedNavbar{
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 99;
+}
 .navbar-brand{
   font-family: 'Lobster', cursive;
   font-weight: bold;
   margin-left: 25px;
+  /* position: fixed; */
 }
 .notLanding{
   background-color: rgb(214, 235, 249);

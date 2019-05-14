@@ -33,18 +33,6 @@ class Search extends React.Component {
         this.setState({ redirect: true })
       }
     });
-  // API.getUsers()
-  // .then((req, res) => {
-  //     console.log(req);
-  //     console.log(req.user);
-  //     if (req.data !== "no user") {
-  //       //load page
-  //       res.json("/login", req.data);
-  //     } else {
-  //       this.setState({ redirect: true })
-  //     }
-  //   })
-  //   .catch(err => console.log(err));
   };
 
   loadJobType = (type) => {
@@ -52,7 +40,8 @@ class Search extends React.Component {
       .then(res => this.setState({ jobs: res.data }))
       .catch(err => console.log(err));
   }
-  //automatically createa card for each job posted
+  // automatically create a card for each job posted
+  // populate all with creatorBy
   loadJobs = () => {
     API.getJobs()
       .then(res => this.setState({ jobs: res.data }, () => console.log("new data:", this.state.jobs)))
@@ -138,6 +127,7 @@ class Search extends React.Component {
                             description={job.description}
                             date={job.date}
                             payRate={job.payRate}
+                            createdById={job.createdBy._id}
                           />
                         );
                       })}

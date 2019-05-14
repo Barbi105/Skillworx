@@ -3,14 +3,14 @@ import ApplyButton from '../applyJob/applyJob'
 import TaskHeader from './header.jsx'
 import "./Task.css"
 
-
 function Task({
   title,
   description,
   zipcode,
   date,
   payRate,
-  _id
+  _id,
+  createdById,
 }) {
   return (
     <div >
@@ -24,11 +24,11 @@ function Task({
       <div className="card-body">
         <p>{description}</p>
         <h6>{date}</h6>
-        <h4>{payRate}</h4><i className="font-awesome mr-3 text-right far fa-envelope"></i>
-        <ApplyButton _id={_id} />
+        <h4>{payRate}</h4>
+        <i className="font-awesome mr-3 text-right far fa-envelope"></i>
+          <ApplyButton _id={_id} createdById={createdById}/>
       </div>
     </div>
-
   )
 }
 

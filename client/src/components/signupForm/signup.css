@@ -3,11 +3,7 @@
   margin: 0 70px;
   padding-top: 25px;
 }
-/* 
-.form-control {
-  background-color: rgba(253,	249,	186, .9)
-  background-color: rgba(226, 240,	213, 0.7);
-} */
+/* left side */
 #leftMessage{
   background-color: #fdf9ba;
 }
@@ -28,9 +24,18 @@ h2{
 #lastPhrase{
   margin-bottom: 150px;
 }
+/* right side */
 h3{
   font-family: Playfair Display;
   background-color: white !important;
+  border-bottom: none !important;
+  margin-top: 50px !important;
+}
+.form-control {
+  border-radius: 0px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  /* margin-left:25px; */
+  outline: none;
 }
 
 /* .leftLanding {

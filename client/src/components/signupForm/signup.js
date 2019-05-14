@@ -45,15 +45,15 @@ export class SignupForm extends Component {
         <Container fluid>
           <div className="row">
             <div className="col-md-6" id="leftMessage">
-              <h2 id="topMessage">Tidy Space.</h2>
-              <h2 id="bottomMessage">Happy Mind.</h2>
-              <p className="catchyPhrase">
+              <h2 className="ml-4" id="topMessage">Tidy Space.</h2>
+              <h2 className="ml-4" id="bottomMessage">Happy Mind.</h2>
+              <p className="catchyPhrase ml-4">
                 The ways clearing your space can improve your life.
               </p>
-              <p className="catchyPhrase">
+              <p className="catchyPhrase ml-4">
                 The ways clearing your space can improve your life.
               </p>
-              <p className="catchyPhrase" id="lastPhrase">
+              <p className="catchyPhrase ml-4" id="lastPhrase">
                 The ways clearing your space can improve your life.
               </p>
             </div>
@@ -68,7 +68,7 @@ export class SignupForm extends Component {
                         className="form-control-plaintext"
                         id="nameSignup"
                         name="firstName"
-                        placeholder="First Name"
+                        placeholder="   First Name"
                         value={this.state.firstName}
                         onChange={this.handleInputChange}
                         required
@@ -82,7 +82,7 @@ export class SignupForm extends Component {
                         className="form-control-plaintext"
                         name="lastName"
                         id="lastNameSignup"
-                        placeholder="Last Name"
+                        placeholder="   Last Name"
                         value={this.state.lastName}
                         onChange={this.handleInputChange}
                         required
@@ -96,7 +96,7 @@ export class SignupForm extends Component {
                     className="form-control-plaintext"
                     id="usernameSignup"
                     name="email"
-                    placeholder="Email"
+                    placeholder="   Email"
                     value={this.state.email}
                     onChange={this.handleInputChange}
                     required
@@ -108,7 +108,7 @@ export class SignupForm extends Component {
                     className="form-control-plaintext"
                     id="userPasswordSignup"
                     name="password"
-                    placeholder="Password"
+                    placeholder="   Password"
                     value={this.state.password}
                     onChange={this.handleInputChange}
                     required

@@ -21,20 +21,24 @@
   color: rgba(18, 17, 17, 0.831);
 
 }
-
-.nav-item{
-  background-color: #ddd;
-  color: rgba(51, 102, 153, 1);
-  padding: 5px 10px;
-  border-top: 3px solid #222;
-  float: right;
-  margin-right: 5px;
-  transition-duration: 250ms;
-  transition-timing-function: ease-in;
+form{
+  margin-top: 0;
 }
 
-.nav-item:hover {
-  background-color: #fff;
-  transition-duration: 250ms;
-  transition-timing-function: ease-in;
+.form-control:focus{
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
+  border-color: #fdf9ba;
+}
+#login-submit{
+  width: 200px;
+  background-color: rgb(214, 235, 249) !important;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 12px;
+  height:50px;
+  color: black;
+}
+.formFieldLogin{
+  padding: 5px
 }

@@ -54,8 +54,8 @@ export class LandingNav extends Component {
           <div className="d-flex">
             <form className="login">
               <div className="form-group form-inline">
-                <input type="text" className="form-control" id="usernameLogin" placeholder="email" name="email" value={this.state.email} onChange={this.handleInputChange} />
-                <input type="password" className="form-control" id="userPasswordLogin" placeholder="password" name="password" value={this.state.password} onChange={this.handleInputChange}/>
+                <input type="text" className="form-control mr-3" id="usernameLogin" placeholder="email" name="email" value={this.state.email} onChange={this.handleInputChange} />
+                <input type="password" className="form-control mr-3" id="userPasswordLogin" placeholder="password" name="password" value={this.state.password} onChange={this.handleInputChange}/>
                 <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary" id="login-submit">login</button>
               </div>
             </form>

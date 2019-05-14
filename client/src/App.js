@@ -14,7 +14,6 @@ function App() {
           <Route exact path="/" component={Landing} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/postForm" component={PostJob} />
-
           <Route exact path="/chat" component={ChatBox} />
         </Switch>
       </div>

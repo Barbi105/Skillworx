@@ -8,11 +8,11 @@ function Navbar() {
     <nav className="navbar navbar-light notLanding" >
       <span className="navbar-brand mb-0">
         <span className="cap-brand">S</span>
-        <span className="small-cap-brand">kill</span>
+        <span className="small-cap-brand kill">kill</span>
         <span className="cap-brand w">W</span>
         <span className="small-cap-brand">orx</span>
       </span>
-      <div className="d-flex mr-5">
+      <div className="d-flex mr-5" id="dropDownMedia">
      <DropDown/>
       </div>
 

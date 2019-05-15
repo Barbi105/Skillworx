@@ -53,6 +53,7 @@ h2 {
 @media only screen and (max-width: 768px){
   .d-flex{
     flex-wrap: wrap;
+    margin-top: 20px;
   }
   
   .how-item {

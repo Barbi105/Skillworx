@@ -64,7 +64,7 @@ export class SignupForm extends Component {
                 The ways clearing your space can improve your life.
               </p>
             </div>
-            <div className="col-md-6 text-center">
+            <div className="col-md-6 text-center" id="signupFormMobile">
               <h3>Join the Community</h3>
               <form className="ml-4">
                 <div className="row">

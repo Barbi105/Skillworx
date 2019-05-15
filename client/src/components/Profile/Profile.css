@@ -3,6 +3,9 @@
   /* border-radius: 50%; */
 }
 
+#profileName{
+  font-family: 'Lobster', cursive;
+}
 #skill-block {
   display: flex;
   flex-wrap: wrap;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import API from "../../utils/API"
+import {Container, Row, Column} from '../grid/grid';
 import "./postForm.css"
 
 export class PostForm extends Component {
@@ -35,9 +36,13 @@ handleInputChange = event => {
   }
   render() {
     return (
-        <div id="postForm-jumbotron" className="jumbotron"  >
-          <h2>Post a job:</h2>
-            <form>
+        <div id="postForm-jumbotron" className="jumbotron">
+          <h2 id="postTitle">Post a Job</h2>
+          <Container>
+          <Row>
+            <div className="col-lg-2"></div>
+            <div className="col-lg-8">
+            <form id="postForm">
                   <div className="form-group">
                     <input type="text" className="form-control" id="titleJob" name="title" placeholder="Title" value={this.state.title} onChange={this.handleInputChange} required/>
                   </div>
@@ -67,6 +72,10 @@ handleInputChange = event => {
                   </div>
                   <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary signup-submit-barb" id="signup-submit">Post job</button>
                 </form>
+                </div>
+                <div className="col-lg-2"></div>
+                </Row>
+                </Container>
         </div>
         ) 
       }

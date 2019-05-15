@@ -62,8 +62,8 @@ class ChatApp extends React.Component {
   render() {
     // Here we want to render the main chat application components
     return (
-      <div className="container">
-        <h3>Chat</h3>
+      <div className="container chatContainer" id="SideChat">
+        <h3 id='chatTitle'>Chat</h3>
         <Messages messages={this.state.messages} />
         <ChatInput onSend={this.sendHandler} />
       </div>

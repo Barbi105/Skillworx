@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import API from "../../utils/API"
+import ',/login.css'
 
 export class LoginForm extends Component {
   state={
@@ -42,8 +43,8 @@ export class LoginForm extends Component {
     }
 
     return (
-        <div className="jumbotron">
-          <form className="login">
+        <div className="jumbotron" id="loginJumbotron">
+          <form className="login" id="loginForm">
             <div className="form-group">
               <input type="text" className="form-control" id="usernameLogin" placeholder="username" name="email" value={this.state.email} onChange={this.handleInputChange} />
             </div>

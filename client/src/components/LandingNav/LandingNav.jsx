@@ -45,11 +45,11 @@ export class LandingNav extends Component {
 
       <div>
         <nav className="navbar navbar-light">
-          <span className="navbar-brand mb-0">
-            <span className="cap-brand">S</span>
-            <span className="small-cap-brand">kill</span>
-            <span className="cap-brand w">W</span>
-            <span className="small-cap-brand">orx</span>
+          <span className="navbar-brand mb-0" id="landingSpan">
+            <span className="cap-brand" id="cap-brand" >S</span>
+            <span className="small-cap-brand" id="small-cap-brand">kill</span>
+            <span className="cap-brand w" id="cap-brand">W</span>
+            <span className="small-cap-brand" id="small-cap-brand">orx</span>
           </span>
           <div className="d-flex">
             <form className="login">

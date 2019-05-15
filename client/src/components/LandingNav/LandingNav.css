@@ -6,7 +6,7 @@
   margin-left:70px;
   margin-right:70px;
 }
-.cap-brand {
+#cap-brand {
   font-size: 4.5rem;
   color: rgba(18, 17, 17, 0.831);
   letter-spacing: -3px;
@@ -14,8 +14,12 @@
 .w{
   letter-spacing: -8px;
 }
+#landingSpan{
+  margin-top:0;
+  padding-top:0;
+}
 
-.small-cap-brand {
+#small-cap-brand {
   font-size: 2.5rem;
   color: rgba(18, 17, 17, 0.831);
 

@@ -36,18 +36,6 @@ class Search extends React.Component {
           this.setState({ redirect: true })
         }
       });
-    // API.getUsers()
-    // .then((req, res) => {
-    //     console.log(req);
-    //     console.log(req.user);
-    //     if (req.data !== "no user") {
-    //       //load page
-    //       res.json("/login", req.data);
-    //     } else {
-    //       this.setState({ redirect: true })
-    //     }
-    //   })
-    //   .catch(err => console.log(err));
   };
 
   loadJobType = (type) => {
@@ -60,7 +48,8 @@ class Search extends React.Component {
     }
     
   }
-  //automatically createa card for each job posted
+  // automatically create a card for each job posted
+  // populate all with creatorBy
   loadJobs = () => {
     API.getJobs()
       .then(res => this.setState({ jobs: res.data }, () => console.log("new data:", this.state.jobs)))
@@ -129,8 +118,9 @@ class Search extends React.Component {
 
                     </div>  */}
 
-                </Row>
-          
+
+              </Row>
+
             </Container>
           </div>
           <div className="jumbotron resultsJumbotron">
@@ -148,11 +138,14 @@ class Search extends React.Component {
                             <Task
                               key={job.title}
                               _id={job._id}
+                              image={job.createdBy.image}
                               title={job.title}
                               zipcode={job.zipcode}
                               description={job.description}
                               date={moment(job.date).format("MM/DD/YYYY")}
                               payRate={job.payRate}
+                              createdById={job.createdBy._id}
+                              name={job.createdBy.firstName}
                             />
                             </div>
                           );
@@ -161,7 +154,7 @@ class Search extends React.Component {
                   </Row>
               
           </div>
-          <Footer/>
+          <Footer />
         </div>
 
 

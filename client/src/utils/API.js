@@ -25,8 +25,9 @@ export default {
     return axios.get("/api/users/save/" + id);
   },
   getUserJobs: function () {
-    return axios.get("/api/user/myjobs");
+    return axios.get("/api/users/myjobs");
   },
+
 
   /*
     AUTHENTICATION

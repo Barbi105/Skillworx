@@ -3,6 +3,8 @@
   width: 100%;
   top:0;
   z-index: 99;
+  box-shadow: 0px -2px 39px -18px rgba(0,0,0,0.75);
+
 }
 .navbar-brand{
   font-family: 'Lobster', cursive;

@@ -3,13 +3,12 @@ import './footer.css'
 
 function Footer() {
   return (
-    <div id="fixedFooter">
+    <div id="fixedFooter" className="text-center">
    
-  <span class="navbar-text">
-    what do footers even have?
-  </span>
-
-  </div>
+      <i className="fab fa-instagram"></i>
+      <i className="fab fa-twitter"></i>
+      <i className="fab fa-facebook-square"></i>
+    </div>
   )
 }
 

@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Container, Row, Col } from "../grid/grid";
 import "./signup.css";
+import {Redirect} from "react-router-dom";
 
 export class SignupForm extends Component {
   state = {
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
+    password: "",
+    redirectTo: false
   };
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -34,12 +36,17 @@ export class SignupForm extends Component {
     } else if (this.state.password.length < 6) {
       alert(`Choose a longer password`);
     } else {
-      API.signup(this.state).then(res => {
-        console.log(res.data);
+      const { firstName, lastName, email, password } = this.state;
+      const userObj = { firstName, lastName, email, password };
+      API.signup(userObj).then(res => {
+        this.setState({redirectTo: true })
       });
     }
   };
   render() {
+    if (this.state.redirectTo) {
+      return <Redirect to="/settings" />
+    } else {
     return (
       <div className="jumbotron landingJumnotron" >
         <Container fluid>
@@ -128,31 +135,8 @@ export class SignupForm extends Component {
         </Container>
       </div>
 
-      // <div className="d-flex">
-      //   <div className="jumbotron mr-3 leftLanding">
-      //     <h2>Tidy Space.</h2>
-      //     <h2>Happy Mind.</h2>
-      //     <p>The ways clearing your space can improve your life.</p>
-      //   </div>
-      //   <div className="jumbotron w-100">
-      //     <form>
-      //       <div className="form-group">
-      //         <input type="text" className="form-control-plaintext" id="nameSignup" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange} required />
-      //       </div>
-      //       <div className="form-group">
-      //         <input type="text" className="form-control-plaintext" name="lastName" id="lastNameSignup" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange} required />
-      //       </div>
-      //       <div className="form-group">
-      //         <input type="email" className="form-control-plaintext" id="usernameSignup" name="email" placeholder="email" value={this.state.email} onChange={this.handleInputChange} required />
-      //       </div>
-      //       <div className="form-group">
-      //         <input type="password" className="form-control-plaintext" id="userPasswordSignup" name="password" placeholder="password" value={this.state.password} onChange={this.handleInputChange} required />
-      //       </div>
-      //       <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary" id="signup-submit">Sign up</button>
-      //     </form>
-      //   </div>
-      // </div>
     );
   }
+}
 }
 export default SignupForm;

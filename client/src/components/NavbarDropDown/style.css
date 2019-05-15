@@ -1,10 +1,12 @@
 a{
-    font-size: 18px;
+    font-size: 15px;
     color: rgba(18, 17, 17, 0.831);
     padding-right: 70px;
+    font-weight: bold;
 }
 a:hover{
     text-decoration:none !important;
+    color: #c094cc;
 }
 /* .logoutSection{
     background-color: rgb(214, 235, 249) !important;
@@ -15,4 +17,7 @@ a:hover{
 .dropdown-menu{
     padding: 0px;
     text-align: center;
+}
+.dropdown{
+    padding-top: 35px;
 }

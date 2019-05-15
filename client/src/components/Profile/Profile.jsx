@@ -14,7 +14,7 @@ class Profile extends Component {
       jobsApplied: [],
       id: '',
       firstName: '',
-      lastName: '',
+      // lastName: '',
       email: '',
       image: '',
       skills: [],
@@ -54,7 +54,7 @@ class Profile extends Component {
       .then(response => {
         this.setState({
           firstName: response.data.firstName,
-          lastName: response.data.lastName,
+          // lastName: response.data.lastName,
           email: response.data.email,
           image: response.data.image,
           skills: response.data.skills
@@ -74,7 +74,7 @@ class Profile extends Component {
               <img id="user-pic" src={this.state.image} alt="user pic" className="img-thumbnail"></img>
             </div>
             <div className="col-12 col-sm-12 col-md-6 col-lg-6">
-              <h1 className="text-right mb-3">{this.state.firstName} {this.state.lastName}</h1>
+              <h1 id="profileName"className="text-right mb-3">{this.state.firstName} </h1>
               <h2 className="text-left">Bio</h2>
               <p className="text-justify">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum voluptate labore molestias praesentium nostrum, ipsum, esse fugiat itaque id alias eaque incidunt dolore saepe. Ex culpa nisi iure possimus explicabo!
@@ -104,15 +104,6 @@ class Profile extends Component {
                       );
                     })}
                   </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row my-5">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">Reviews</h5>
                 </div>
               </div>
             </div>

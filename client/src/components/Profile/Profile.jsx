@@ -68,7 +68,7 @@ class Profile extends Component {
       return <Redirect to="/" />
     } else {
       return (
-        <div className="jumbotron">
+        <div id="profile-jumbotron" className="jumbotron">
           <div className="row mt-3">
             <div className="col-12 col-sm-12 col-md-6 col-lg-6 mb-3 text-center">
               <img id="user-pic" src={this.state.image} alt="user pic" className="img-thumbnail"></img>

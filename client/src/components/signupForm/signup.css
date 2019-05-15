@@ -58,7 +58,25 @@ form{
   color: black;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 576px){
+  #leftMessage{
+    /* background-color: #fdf9ba; */
+  }
+  #topMessage, #bottomMessage{
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .catchyPhrase{
+    font-size: .8rem;
+
+  }
+  #signup-submit{
+    width: 100%;
+  }
+  .landingJumbotron{
+    margin:0;
+    width:100%;
+  }
 
 }
 

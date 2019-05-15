@@ -16,8 +16,8 @@ const userSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    required:true
-    // match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+    required: true,
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
   password: {
     type: String,
@@ -34,6 +34,7 @@ const userSchema = new Schema({
   rating: Number,
   skills: { type: Array },
   favorites: Array,
+  bio: String,
 
   // an array to store ObjectIds
   // allow us to populate the User with associated Jobs

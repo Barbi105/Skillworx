@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import API from "../../utils/API"
-import ',/login.css'
+import './login.css'
 
 export class LoginForm extends Component {
   state={
@@ -32,6 +32,7 @@ export class LoginForm extends Component {
         console.log(res.data);
         this.setState({ redirectTo: res.data });
       }).catch(err => {
+        // alert("Wrong password/username. Please try again.");
         console.log(err);
       })
     }

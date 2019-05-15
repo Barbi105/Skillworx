@@ -15,7 +15,8 @@ export default {
   },
   // Gets the user with the given id
   updateUser: function (userData) {
-    return axios.put("/api/users/", userData);
+    const config = { headers: {'Content-Type': 'application/json'} };
+    return axios.put("/api/users/update", userData, config);
   },
   // Deletes the user with the given id
   deleteUsers: function (id) {

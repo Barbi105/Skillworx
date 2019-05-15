@@ -67,18 +67,41 @@ class Profile extends Component {
       return <Redirect to="/" />
     } else {
       return (
+
         <div id="profile-jumbotron" className="jumbotron">
+
+          <div className="row mt-3">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12">
+              <h1 id="profileName" className="text-right mb-3">{this.state.firstName}</h1>
+            </div>
+
+          </div>
           <div className="row mt-3">
             <div className="col-12 col-sm-12 col-md-6 col-lg-6 mb-3 text-center">
               <img id="user-pic" src={this.state.image} alt="user pic" className="img-thumbnail"></img>
             </div>
             <div className="col-12 col-sm-12 col-md-6 col-lg-6">
-              <h1 id="profileName" className="text-right mb-3">{this.state.firstName}</h1>
-              <h2 className="text-left">Bio</h2>
               <p className="text-justify">{this.state.bio}</p>
             </div>
           </div>
+
           <div className="row">
+            <div className="col-12 col-sm-12 col-md-6 col-lg-6">
+              <div className="card" id="skill-card">
+                <div className="card-body">
+                  <h5 className="card-title">Skills:</h5>
+                  <ul className="list-group list-group-flush">
+                    {this.state.skills.map((skill, i) => {
+                      return (
+                        <li className="list-group-item" key={i}>{skill}</li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            </div>
+          {/* <div className="row">
             <div className="col-12 col-sm-12 col-md-6 col-lg-6">
               <h4 className="text-left mb-3">Skills</h4>
               <div id="skill-block">
@@ -89,11 +112,12 @@ class Profile extends Component {
                 })}
               </div>
             </div>
-
+            </div> */}
+            <div className="row">
             <div className="col-12 col-sm-12 col-md-6 col-lg-6">
               <div className="card" id="job-card">
                 <div className="card-body">
-                  <h5 className="card-title">Jobs Completed</h5>
+                  <h5 className="card-title">Jobs Completed:</h5>
                   <ul className="list-group list-group-flush">
                     {this.state.jobsApplied.map((job, i) => {
                       return (
@@ -104,7 +128,8 @@ class Profile extends Component {
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+         
         </div>
       )
     }

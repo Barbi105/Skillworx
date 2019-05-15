@@ -38,7 +38,13 @@ export class SignupForm extends Component {
       const { firstName, lastName, email, password } = this.state;
       const userObj = { firstName, lastName, email, password };
       API.signup(userObj).then(res => {
-        this.setState({redirectTo: true })
+
+      API.login({ email, password }).then((res)=>{
+        console.log(res.data);
+        this.setState({ redirectTo: true });
+      }).catch(err => {
+        console.log(err);
+      })
       });
     }
   };
@@ -51,16 +57,17 @@ export class SignupForm extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6" id="leftMessage">
-              <h2 className="ml-4" id="topMessage">Tidy Space.</h2>
+              <h2 className="ml-4" id="topMessage">Stress Free.</h2>
               <h2 className="ml-4" id="bottomMessage">Happy Mind.</h2>
               <p className="catchyPhrase ml-4">
-                The ways clearing your space can improve your life.
+              Connecting people.
               </p>
               <p className="catchyPhrase ml-4">
-                The ways clearing your space can improve your life.
+              Increasing productivity.
+              
               </p>
               <p className="catchyPhrase ml-4" id="lastPhrase">
-                The ways clearing your space can improve your life.
+              Helping you improve your life.
               </p>
             </div>
             <div className="col-md-6 text-center" id="signupFormMobile">

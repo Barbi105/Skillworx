@@ -45,7 +45,7 @@ export class SettingsForm extends Component {
 
   render() {
     return (
-      <div>
+      <div id="postForm-jumbotron" className="jumbotron">
         <Row>
           <Col size="col-md-2" />
           <Col size="col-md-8">
@@ -96,19 +96,20 @@ export class SettingsForm extends Component {
                     onChange={this.handleInputChange}
                   />
                 </div>
+                <button
+                  onClick={this.handleFormSubmit}
+                  type="submit"
+                  className="btn btn-primary "
+                  id="signup-submit">
+                  Submit
+                </button>
                 <Link
                   to="/profile"
                   className="btn btn-primary-outline signup-submit-barb"
                   id="cancel-submit">
                   Cancel
                 </Link>
-                <button
-                  onClick={this.handleFormSubmit}
-                  type="submit"
-                  className="btn btn-primary signup-submit-barb"
-                  id="update-submit">
-                  Submit
-                </button>
+                
 
               </form>
             </div>

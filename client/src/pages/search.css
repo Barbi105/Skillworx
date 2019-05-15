@@ -41,6 +41,10 @@ body{
     .searchJumbotron {
       margin: 100px 0 0 0;
     }
+
+    .resultsJumbotron {
+      margin: 100px 0 0 0;
+    }
     #selectTypeMenu {
       width: 100%;
       margin: 0;

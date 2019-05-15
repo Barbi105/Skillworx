@@ -62,10 +62,10 @@ form{
   #leftMessage{
     /* background-color: #fdf9ba; */
   }
-  #topMessage, #bottomMessage{
+  /* #topMessage, #bottomMessage{
     font-size: 2rem;
     font-weight: 700;
-  }
+  } */
   .catchyPhrase{
     font-size: .8rem;
 

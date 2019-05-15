@@ -48,8 +48,8 @@ export class SignupForm extends Component {
       return <Redirect to="/settings" />
     } else {
     return (
-      <div className="jumbotron landingJumnotron" >
-        <Container fluid>
+      <div className="jumbotron landingJumbotron" >
+        <div className="container-fluid">
           <div className="row">
             <div className="col-md-6" id="leftMessage">
               <h2 className="ml-4" id="topMessage">Tidy Space.</h2>
@@ -75,7 +75,7 @@ export class SignupForm extends Component {
                         className="form-control-plaintext"
                         id="nameSignup"
                         name="firstName"
-                        placeholder="   First Name"
+                        placeholder="First Name"
                         value={this.state.firstName}
                         onChange={this.handleInputChange}
                         required
@@ -89,7 +89,7 @@ export class SignupForm extends Component {
                         className="form-control-plaintext"
                         name="lastName"
                         id="lastNameSignup"
-                        placeholder="   Last Name"
+                        placeholder="Last Name"
                         value={this.state.lastName}
                         onChange={this.handleInputChange}
                         required
@@ -103,7 +103,7 @@ export class SignupForm extends Component {
                     className="form-control-plaintext"
                     id="usernameSignup"
                     name="email"
-                    placeholder="   Email"
+                    placeholder="Email"
                     value={this.state.email}
                     onChange={this.handleInputChange}
                     required
@@ -115,7 +115,7 @@ export class SignupForm extends Component {
                     className="form-control-plaintext"
                     id="userPasswordSignup"
                     name="password"
-                    placeholder="   Password"
+                    placeholder="Password"
                     value={this.state.password}
                     onChange={this.handleInputChange}
                     required
@@ -132,7 +132,7 @@ export class SignupForm extends Component {
               </form>
             </div>
           </div>
-        </Container>
+          </div>
       </div>
 
     );

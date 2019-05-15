@@ -55,10 +55,10 @@ export class LandingNav extends Component {
             <form className="login">
               <div className="row">
                 <div className="col-md-4 formFieldLogin">
-                  <input type="text" className="form-control-plaintext loginField" id="usernameLogin" placeholder="   Email" name="email" value={this.state.email} onChange={this.handleInputChange} />
+                  <input type="text" className="form-control-plaintext loginField" id="usernameLogin" placeholder="Email" name="email" value={this.state.email} onChange={this.handleInputChange} />
                 </div>
                 <div className="col-md-4 formFieldLogin">
-                  <input type="password" className="form-control-plaintext loginField" id="userPasswordLogin" placeholder="   Password" name="password" value={this.state.password} onChange={this.handleInputChange} />
+                  <input type="password" className="form-control-plaintext loginField" id="userPasswordLogin" placeholder="Password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                 </div>
                 <div className="col-md-4 formFieldLogin">
                   <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary" id="login-submit">Login</button>

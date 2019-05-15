@@ -6,8 +6,7 @@ import LandingNav from "../components/LandingNav/LandingNav"
 function Landing() {
   return (
     <div>
-      <LandingNav></LandingNav>
-
+      <LandingNav/>
       <Signup />
       <How />
     </div>

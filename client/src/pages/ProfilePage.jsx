@@ -1,7 +1,7 @@
 import React from 'react'
 import Profile from "../components/Profile/Profile";
 import Navbar from '../components/Navbar/Navbar'
-import { Container, Row, Col } from '../components/grid/grid';
+import { Container } from '../components/grid/grid';
 import Footer from "../components/footer/footer"
 
 function ProfilePage(props) {

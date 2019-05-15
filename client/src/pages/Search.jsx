@@ -1,5 +1,4 @@
 import React from 'react';
-import LogoutButton from '../components/Logout/logout';
 import Task from '../components/Cards/Task';
 import API from '../utils/API';
 import Footer from '../components/footer/footer'

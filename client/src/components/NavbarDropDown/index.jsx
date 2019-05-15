@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import LogoutButton from '../Logout/logout';
 import API from '../../utils/API';
 import './style.css'
@@ -29,16 +29,17 @@ class DropDown extends Component {
           return(
               <div>
 
-<div class="dropdown">
-  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div className="dropdown">
+  <div className="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   {this.state.firstName} {this.state.lastName}
-  </a>
+  </div>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="/search">Search</a>
-    <a class="dropdown-item" href="/profile">Profile</a>
-    <a class="dropdown-item" href="/postForm">Post Job</a>
-    <a class="dropdown-item logoutSection" href="#"><LogoutButton /></a>
+  <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a className="dropdown-item" href="/profile">Profile</a>
+    <a className="dropdown-item" href="/search">Search</a>
+    <a className="dropdown-item" href="/postForm">Post Job</a>
+    <a className="dropdown-item" href="/settings">Settings</a>
+    <div className="dropdown-item logoutSection" href="#"><LogoutButton /></div>
   </div>
 
 </div>

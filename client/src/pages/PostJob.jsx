@@ -1,11 +1,9 @@
 import React from 'react';
 import PostForm from '../components/postForm/postForm';
-// import Task from '../components/Cards/Task';
 import Navbar from '../components/Navbar/Navbar'
 import API from '../utils/API';
-import {Container, Row, Col} from '../components/grid/grid';
+import { Container } from '../components/grid/grid';
 import { Redirect } from 'react-router-dom';
-// import { stringify } from 'querystring';
 import Footer from "../components/footer/footer"
 
 class Search extends React.Component {

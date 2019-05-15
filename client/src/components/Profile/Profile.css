@@ -5,10 +5,14 @@
 
 #profileName{
   font-family: 'Lobster', cursive;
+  float: left;
 }
 #skill-block {
   display: flex;
   flex-wrap: wrap;
+}
+#skill-card{
+  margin-bottom: 20px;
 }
 
 .skill {
@@ -26,6 +30,20 @@
 }
 
 #profile-jumbotron {
-  margin-top: 120px;
+  margin-top: 100px;
+  margin-right: 213px;
+  margin-left: -50px;
 }
+@media only screen and (max-width: 600px){
+  #profile-jumbotron {
+    margin-top: 100px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  #profileName{
+    margin-left:90px;
+  }
+  
+}
+
 /* pastel blue: #D7EBFA */

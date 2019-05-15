@@ -1,8 +1,11 @@
-/* #settingsForm-jumbotron {
-  margin-top: 120px;
+#cancel-submit{
+  margin-top: 35px;
+  width: 300px;
+  background-color: #fdf9ba !important;
+  border: none;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 12px;
+  height:50px;
+  color: black;
 }
-
-.signup-submit-barb {
-  margin-left:auto;
-  margin-right: auto;
-} */

@@ -9,6 +9,7 @@ export class SettingsForm extends Component {
     email: "",
     image: "",
     skills: [],
+    bio: ""
   };
 
   handleInputChange = event => {
@@ -45,7 +46,7 @@ export class SettingsForm extends Component {
 
   render() {
     return (
-      <div>
+      <div id="postForm-jumbotron" className="jumbotron">
         <Row>
           <Col size="col-md-2" />
           <Col size="col-md-8">
@@ -105,10 +106,12 @@ export class SettingsForm extends Component {
                 <button
                   onClick={this.handleFormSubmit}
                   type="submit"
-                  className="btn btn-primary signup-submit-barb"
-                  id="update-submit">
+                  className="btn btn-primary "
+                  id="signup-submit">
                   Submit
                 </button>
+                
+                
 
               </form>
             </div>

@@ -27,21 +27,14 @@ export class SettingsForm extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
-    function validateEmail(email) {
-      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(email).toLowerCase());
-    }
+      const { email, image, skills, bio } = this.state;
+      const userObj = { email, image, skills, bio };
 
-    if (this.state.email !== "" || validateEmail(this.state.email)) {
-      alert("Please enter a valid email address");
-    } else {
-      const { email, image, skills } = this.state;
-      const userObj = { email, image, skills };
       API.updateUser(userObj).then(res => {
         console.log(res.data);
         this.props.history.push("/profile")
       });
-    }
+    
   }
 
   render() {
@@ -52,7 +45,7 @@ export class SettingsForm extends Component {
           <Col size="col-md-8">
             <div className="mt-5 text-center">
               <h2>Edit Profile</h2>
-              <form method="post">
+              <form>
                 <div className="form-group">
                   <input type="text"
                     className="form-control"
@@ -68,7 +61,7 @@ export class SettingsForm extends Component {
                   <textarea
                     className="form-control"
                     name="bio"
-                    id="bio"
+                    id="bio-input"
                     rows="5"
                     placeholder="Bio"
                     value={this.state.bio}

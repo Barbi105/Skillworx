@@ -16,6 +16,7 @@ class Profile extends Component {
       email: '',
       image: '',
       skills: [],
+      bio: ''
     };
 
   }

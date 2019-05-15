@@ -26,8 +26,10 @@ module.exports = {
       });
   },
   update: function (req, res) {
+    console.log("User UserID :\n"+req.user);
+    console.log("Data Sent :\n"+req.body);
     db.User
-      .findOneAndUpdate({ _id: req.user.id }, {$set: req.body})
+      .findOneAndUpdate({ _id: req.user._id }, {$set: req.body})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

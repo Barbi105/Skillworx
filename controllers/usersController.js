@@ -26,9 +26,8 @@ module.exports = {
       });
   },
   update: function (req, res) {
-    console.log(req.body);
     db.User
-      .findOneAndUpdate({ _id: req.user.id }, req.body)
+      .findOneAndUpdate({ _id: req.user.id }, {$set: req.body})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

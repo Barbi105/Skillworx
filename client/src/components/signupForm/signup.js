@@ -38,7 +38,13 @@ export class SignupForm extends Component {
       const { firstName, lastName, email, password } = this.state;
       const userObj = { firstName, lastName, email, password };
       API.signup(userObj).then(res => {
-        this.setState({redirectTo: true })
+
+      API.login({ email, password }).then((res)=>{
+        console.log(res.data);
+        this.setState({ redirectTo: true });
+      }).catch(err => {
+        console.log(err);
+      })
       });
     }
   };

@@ -9,6 +9,7 @@ export class SettingsForm extends Component {
     email: "",
     image: "",
     skills: [],
+    bio: ""
   };
 
   handleInputChange = event => {
@@ -96,6 +97,12 @@ export class SettingsForm extends Component {
                     onChange={this.handleInputChange}
                   />
                 </div>
+                <Link
+                  to="/profile"
+                  className="btn btn-primary-outline signup-submit-barb"
+                  id="cancel-submit">
+                  Cancel
+                </Link>
                 <button
                   onClick={this.handleFormSubmit}
                   type="submit"
@@ -103,12 +110,7 @@ export class SettingsForm extends Component {
                   id="signup-submit">
                   Submit
                 </button>
-                <Link
-                  to="/profile"
-                  className="btn btn-primary-outline signup-submit-barb"
-                  id="cancel-submit">
-                  Cancel
-                </Link>
+                
                 
 
               </form>

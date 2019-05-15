@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import API from "../../utils/API"
 import { Container, Row } from '../grid/grid';
+import {withRouter} from 'react-router-dom';
 import "./postForm.css"
 
 export class PostForm extends Component {
@@ -31,7 +32,9 @@ export class PostForm extends Component {
     } else {
       API.saveJob(this.state).then((res) => {
         console.log(res.data);
+        this.props.history.push("/search")
       })
+      .catch(err => console.log(err));
     }
   }
   render() {
@@ -80,4 +83,4 @@ export class PostForm extends Component {
     )
   }
 }
-export default PostForm;
+export default withRouter(PostForm);

@@ -2,7 +2,9 @@ import React from 'react';
 import LogoutButton from '../components/Logout/logout';
 import Task from '../components/Cards/Task';
 import API from '../utils/API';
-import {Container, Row, Col} from '../components/grid/grid';
+import Footer from '../components/footer/footer'
+import "./search.css"
+import { Container, Row, Col } from '../components/grid/grid';
 import { Redirect } from 'react-router-dom';
 import Navbar from "../components/Navbar/Navbar"
 
@@ -14,9 +16,9 @@ class Search extends React.Component {
     type: ''
   };
 
-  componentDidMount(){  
-   this.loadJobs();
-   this.restrictPage();
+  componentDidMount() {
+    this.loadJobs();
+    this.restrictPage();
   }
 
 
@@ -28,25 +30,25 @@ class Search extends React.Component {
   //prevents unauthorized users to acces page
   restrictPage = () => {
     API.getUsers()
-    .then(response => {
-      console.log(response);
-      if (response.data === "no user") {
-        //load page
-        this.setState({ redirect: true })
-      }
-    });
-  // API.getUsers()
-  // .then((req, res) => {
-  //     console.log(req);
-  //     console.log(req.user);
-  //     if (req.data !== "no user") {
-  //       //load page
-  //       res.json("/login", req.data);
-  //     } else {
-  //       this.setState({ redirect: true })
-  //     }
-  //   })
-  //   .catch(err => console.log(err));
+      .then(response => {
+        console.log(response);
+        if (response.data === "no user") {
+          //load page
+          this.setState({ redirect: true })
+        }
+      });
+    // API.getUsers()
+    // .then((req, res) => {
+    //     console.log(req);
+    //     console.log(req.user);
+    //     if (req.data !== "no user") {
+    //       //load page
+    //       res.json("/login", req.data);
+    //     } else {
+    //       this.setState({ redirect: true })
+    //     }
+    //   })
+    //   .catch(err => console.log(err));
   };
 
   loadJobType = (type) => {
@@ -63,7 +65,7 @@ class Search extends React.Component {
 
   loadUser = () => {
     API.getUserById()
-      .then(res => this.setState({user: res.data}))
+      .then(res => this.setState({ user: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -85,7 +87,7 @@ class Search extends React.Component {
   };
 
 
-  render(){
+  render() {
     if (this.state.redirect) {
       return <Redirect to="/" />
     } else {

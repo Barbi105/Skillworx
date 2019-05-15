@@ -1,7 +1,7 @@
 import React from 'react';
-import LogoutButton from '../components/Logout/logout';
 import PostForm from '../components/postForm/postForm';
-import Task from '../components/Cards/Task';
+// import Task from '../components/Cards/Task';
+import Navbar from '../components/Navbar/Navbar'
 import API from '../utils/API';
 import {Container, Row, Col} from '../components/grid/grid';
 import { Redirect } from 'react-router-dom';
@@ -54,18 +54,12 @@ class Search extends React.Component {
     } else {
       return (
         <div>
-        <LogoutButton />
+        <Navbar />
         <Container fluid>
           <PostForm/>
         </Container>
         </div>
 
-        // <div>
-        //   <LogoutButton />
-        //   <br/>
-        //   <Task/>
-        //   <PostForm />
-        // </div>
       )
     }
   }

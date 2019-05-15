@@ -3,6 +3,11 @@
   transition-duration: 250ms;
   transition-timing-function: ease-in;
 }
+#taskCard{
+  background-color: white;
+  border: 1px solid black;
+
+}
 
 .card:hover {
   box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.5);

@@ -17,6 +17,7 @@ function App() {
           <Route exact path="/postForm" component={PostJob} />
           <Route exact path="/chat" component={ChatBox} />
           <Route exact path="/profile" component={ProfilePage}/>
+          <Route path="/users/:id" component={ProfilePage} />
         </Switch>
       </div>
     </Router>

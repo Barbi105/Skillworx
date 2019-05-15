@@ -21,3 +21,8 @@ a:hover{
 .dropdown{
     padding-top: 35px;
 }
+@media only screen and (max-width: 600px){
+   .dropdown-toggle{
+       padding:0px;
+   }
+  }

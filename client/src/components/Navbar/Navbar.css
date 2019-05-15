@@ -35,5 +35,20 @@
 .small-cap-brand {
   font-size: 1.5rem;
   color: rgba(18, 17, 17, 0.831);
-
+}
+@media only screen and (max-width: 600px){
+  .cap-brand {
+    font-size: 2.5rem;
+    letter-spacing: -3px;
+  }
+  .w{
+    letter-spacing: -20px;
+  }
+  .small-cap-brand {
+   color: transparent;
+   font-size: 0;
+  }
+  #dropDownMedia{
+    
+  }
 }

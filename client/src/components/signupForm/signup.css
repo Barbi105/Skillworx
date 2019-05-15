@@ -76,6 +76,10 @@ form{
   .landingJumbotron{
     margin:0;
     width:100%;
+    margin-top: 185px
+  }
+  #signupFormMobile{
+    margin-right: 20px;
   }
 
 }

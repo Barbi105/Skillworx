@@ -12,7 +12,7 @@
   padding: 5px;
   margin-right: 5px;
   border-bottom: 3px solid #222;
-  background-color: rgba(51, 102, 153, 1);
+  background-color: #73587A;
   border-radius: 5px;
   color: #ddd;
   margin-bottom: 5px;
@@ -22,4 +22,7 @@
   width: 18rem;
 }
 
+#profile-jumbotron {
+  margin-top: 120px;
+}
 /* pastel blue: #D7EBFA */

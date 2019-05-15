@@ -21,7 +21,7 @@ function How() {
       <h5 class="card-title">2</h5>
       <p class="card-text">Based on what you're looking for,
             we'll match you up with people who have the skills to help you out or pair you with people that are in need of your skill-set.
-            Our review system makes finding quality assistance easy!</p>
+      </p>
    
     </div>
   </div>

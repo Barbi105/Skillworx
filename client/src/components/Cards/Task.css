@@ -23,7 +23,7 @@
 } */
 
 .card-header {
-  background-color: rgba(51, 102, 153, 1);
+  background-color: #86678e;
   color: #ddd;
   position: relative;
   height: 100%;
@@ -36,11 +36,12 @@
 
 .card-header img {
   width: 5rem;
-  height: 5rem;;
-  border-radius: 50%;
-  position: absolute;
+  height: 5rem;
+  border-radius: 5px;
+  /* position: absolute;
   top: 10px;
-  left: 10px;
+  left: 10px; */
+  float: left;
 }
 
 .font-awesome {

@@ -7,12 +7,12 @@ function Task({
   title,
   name,
   description,
-  zipcode,
   date,
   payRate,
   _id,
   createdById,
   image,
+  zipcode
 }) {
   return (
     <div className="card mb-3 mr-3 task-cards">
@@ -21,8 +21,11 @@ function Task({
         <div className="card-header-text">
           <h4 className="text-right">{title}</h4>
           <h6 className="text-right">{name}</h6>
+          <p className="text-right">
           <i className="font-awesome far fa-envelope"></i>
           <i className="font-awesome text-right fas fa-map-marker-alt"></i><span>{zipcode}</span>
+          </p>
+          
         </div>
 
       </div>

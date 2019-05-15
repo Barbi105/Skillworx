@@ -4,7 +4,7 @@ function UserSettings() {
   return (
     <div id="postForm-jumbotron" className="jumbotron"  >
           <h2>Post a job:</h2>
-            <form>
+            {/* <form>
                   <div className="form-group">
                     <input type="text" className="form-control" id="titleJob" name="title" placeholder="Title" value={this.state.title} onChange={this.handleInputChange} required/>
                   </div>
@@ -33,7 +33,7 @@ function UserSettings() {
                     <input type="date" className="form-control" id="dateJob" name="date" placeholder="date for task" value={this.state.date}onChange={this.handleInputChange} required/>
                   </div>
                   <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary signup-submit-barb" id="signup-submit">Post job</button>
-                </form>
+                </form> */}
         </div>
   )
 }

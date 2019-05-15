@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
 import "./Profile.css";
-import Task from '../Cards/Task';
-import { Row, Col } from '../grid/grid';
 import { Redirect } from 'react-router-dom';
 
 class Profile extends Component {
@@ -55,6 +53,7 @@ class Profile extends Component {
         this.setState({
           firstName: response.data.firstName,
           // lastName: response.data.lastName,
+          bio: response.data.bio,
           email: response.data.email,
           image: response.data.image,
           skills: response.data.skills
@@ -74,20 +73,18 @@ class Profile extends Component {
               <img id="user-pic" src={this.state.image} alt="user pic" className="img-thumbnail"></img>
             </div>
             <div className="col-12 col-sm-12 col-md-6 col-lg-6">
-              <h1 id="profileName"className="text-right mb-3">{this.state.firstName} </h1>
+              <h1 id="profileName" className="text-right mb-3">{this.state.firstName}</h1>
               <h2 className="text-left">Bio</h2>
-              <p className="text-justify">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum voluptate labore molestias praesentium nostrum, ipsum, esse fugiat itaque id alias eaque incidunt dolore saepe. Ex culpa nisi iure possimus explicabo!
-              </p>
+              <p className="text-justify">{this.state.bio}</p>
             </div>
           </div>
           <div className="row">
             <div className="col-12 col-sm-12 col-md-6 col-lg-6">
               <h4 className="text-left mb-3">Skills</h4>
               <div id="skill-block">
-                {this.state.skills.map(skill => {
+                {this.state.skills.map((skill, i) => {
                   return (
-                    <div className="skill">{skill}</div>
+                    <div className="skill" key={i}>{skill}</div>
                   );
                 })}
               </div>
@@ -98,9 +95,9 @@ class Profile extends Component {
                 <div className="card-body">
                   <h5 className="card-title">Jobs Completed</h5>
                   <ul className="list-group list-group-flush">
-                    {this.state.jobsApplied.map(job => {
+                    {this.state.jobsApplied.map((job, i) => {
                       return (
-                        <li className="list-group-item">{job.title}</li>
+                        <li className="list-group-item" key={i}>{job.title}</li>
                       );
                     })}
                   </ul>

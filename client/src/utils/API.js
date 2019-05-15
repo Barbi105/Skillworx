@@ -13,6 +13,10 @@ export default {
   getUserById: function (id) {
     return axios.get("/api/users/" + id);
   },
+  // Gets the user with the given id
+  updateUser: function (userData) {
+    return axios.put("/api/users/", userData);
+  },
   // Deletes the user with the given id
   deleteUsers: function (id) {
     return axios.delete("/api/users/" + id);

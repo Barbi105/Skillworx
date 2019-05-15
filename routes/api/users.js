@@ -24,7 +24,8 @@ router.route("/")
       res.send("no user")
     }
   })
-  .post(usersController.create);
+  .post(usersController.create)
+  .put(usersController.update);
 
 // Matches "/api/users/jobs". Populate for user
 router.route("/jobs")

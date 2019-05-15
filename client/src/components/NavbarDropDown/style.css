@@ -4,6 +4,7 @@ a{
     padding-right: 70px;
     font-weight: bold;
 }
+
 a:hover{
     text-decoration:none !important;
     color: #c094cc;
@@ -26,3 +27,4 @@ a:hover{
        padding:0px;
    }
   }
+

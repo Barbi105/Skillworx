@@ -6,10 +6,10 @@ router.route("/")
   .get(jobsController.findAll)
   .post(jobsController.create);
 
-  router.route("/:type")
+router.route("/:type")
   .get(jobsController.findByType);
 
-  // Matches with "/api/jobs/:id"
+// Matches with "/api/jobs/:id"
 router.route("/:id")
   .get(jobsController.findById)
   .put(jobsController.update)

@@ -54,7 +54,7 @@ handleInputChange = event => {
                     </select>
                   </div>
                   <div className="form-group">
-                    <textarea className="form-control" name="description" id="descriptionJob" rows="5" placeholder="Decribe the task at hand" value={this.state.description} onChange={this.handleInputChange} required/>
+                    <textarea className="form-control" name="description" id="descriptionJob" rows="5" placeholder="Describe the task at hand" value={this.state.description} onChange={this.handleInputChange} required/>
                   </div>
                   <div className="form-group">
                     <input type="text" className="form-control" id="zipcodeJob" name="zipcode" placeholder="zipcode" value={this.state.zipcode} onChange={this.handleInputChange} required/>

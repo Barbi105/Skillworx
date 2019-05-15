@@ -18,7 +18,6 @@ class Search extends React.Component {
   };
 
   componentDidMount() {
-    this.loadJobs();
     this.restrictPage();
   }
 
@@ -110,7 +109,7 @@ class Search extends React.Component {
                       <option value="Pet Care">Pet Care</option>
                       <option value="IT">IT</option>
                       <option value="Misc">Misc</option>
-                      </select>
+                    </select>
                       {/* <button  onClick={this.handleSearch}>
                         Search
                       </button> */}
